@@ -30,3 +30,17 @@ Kontrola: v poznámkách nezůstaly staré textové code bloky ani backtick zdro
 ## 2026-05-30 GitHub setup guide
 
 Přidán `README.md` s rychlým návodem pro ostatní: instalace `pdf-mcp[semantic]`, registrace `pdf-mcp` v Codexu a registrace Obsidian MCP endpointu přes `OBSIDIAN_TOKEN`.
+
+## 2026-05-30 MA2A otazky 7-8
+
+- Zpracovana slozka `MA2A` pro otazky 7 a 8 ze `SZZ - Teoretické okruhy.md`.
+- Vytvoreno: [[MA2A/07 Funkce vice promennych, gradient, extremy]] a [[MA2A/08 Vicerozmerne integraly a integralni vety]].
+- Pouzite podklady: [[MA2A/dipocet.pdf]] pro diferencialni pocet vice promennych, [[MA2A/integralni_pocet_vice_prom.pdf]] pro integralni pocet vice promennych.
+- Zachovano: matematika v Obsidian LaTeXu, zdroje po sekcich jako wikilinky na PDF, vzajemne odkazy mezi gradientem/potencialem, znacky `> [!todo] DOPLNIT OBRÁZEK:` pro mista vhodna pro diagramy.
+- Poznamka k nastrojum: PDF MCP pri prvnim cteni poskytl metadata a obsah/TOC stran, nasledne spadl na `Transport closed`; dalsi text byl nouzove extrahovan lokalne z tech samych PDF pres `pdftotext`, bez pouziti externich zdroju.
+
+## 2026-05-30 oprava diakritiky
+
+- Přidáno pravidlo do [[ai/agent-pravidla]]: běžný český text psát s háčky a čárkami.
+- Přepsány poznámky [[MA2A/07 Funkce vice promennych, gradient, extremy]] a [[MA2A/08 Vicerozmerne integraly a integralni vety]] tak, aby prose text, nadpisy a aliasy zdrojů používaly českou diakritiku.
+- Zachovány technické identifikátory, názvy souborů, LaTeX a odkazy na PDF.

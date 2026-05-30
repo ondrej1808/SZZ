@@ -21,3 +21,5 @@
 - První dvě otázky LAGA:
   1. Struktura lineárního prostoru, báze a dimenze. Řešení soustav lineárních rovnic. Lineární zobrazení. Skalární součin, ortogonalizace.
   2. Maticový počet. Determinant a inverze matice. Vlastní vektory a vlastní čísla, podobnost a diagonalizace matic.
+
+- V běžném českém textu vždy používat správnou gramatiku včetně háčků a čárek. Bez diakritiky psát jen tam, kde to vyžaduje technický identifikátor, název souboru, příkaz, kód nebo doslovný zápis z podkladů.
