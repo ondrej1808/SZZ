@@ -13,13 +13,11 @@
 - Pokud informace v podkladech není nalezena, explicitně to označit.
 
 ## Aktuální práce
-
-- Předmět: LAGA
-- Podklady: `LAGA/akla_2023_09_15.pdf`
-- Kontrolní kompost: `hex_compost.pdf`, LAGA část s. 3-15.
+- Předmět: KANA
+- Podklady: `KANA/testkom.pdf`, `KANA/transformace.pdf`
 - Zdrojový seznam otázek: `SZZ - Teoretické okruhy.md`
-- První dvě otázky LAGA:
-  1. Struktura lineárního prostoru, báze a dimenze. Řešení soustav lineárních rovnic. Lineární zobrazení. Skalární součin, ortogonalizace.
-  2. Maticový počet. Determinant a inverze matice. Vlastní vektory a vlastní čísla, podobnost a diagonalizace matic.
+- Otázky KANA:
+  9. Funkce komplexní proměnné a jejich derivace. Křivkový integrál. Singularity. Mocninné řady, Taylorovy a Laurentovy rozvoje. Rezidua, reziduová věta a její aplikace.
+  10. Fourierovy řady, Fourierova a Laplaceova transformace - význam, gramatika, věty o inverzi. Přímá a zpětná transformace Z. Aplikace transformací na řešení diferenciálních a diferenčních rovnic.
 
 - V běžném českém textu vždy používat správnou gramatiku včetně háčků a čárek. Bez diakritiky psát jen tam, kde to vyžaduje technický identifikátor, název souboru, příkaz, kód nebo doslovný zápis z podkladů.

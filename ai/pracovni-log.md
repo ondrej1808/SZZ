@@ -65,3 +65,13 @@ Přidán `README.md` s rychlým návodem pro ostatní: instalace `pdf-mcp[semant
 - Otázka 5 čerpá hlavně z kapitol 15, 16, 26 a 27.
 - Otázka 6 čerpá hlavně z kapitol 5, 11-13, 18-20 a 23-25.
 - Poznámky používají Obsidian LaTeX, český text s diakritikou, wikilinky a zdroje u sekcí.
+
+
+## 2026-05-30 - KANA otázky 9-10
+
+- Zpracovány otázky 9 a 10 do složky `KANA`:
+  - [[09 Komplexni funkce integral singularity rezidua]]
+  - [[10 Fourier Laplace Z transformace]]
+- Použité podklady: [[KANA/testkom.pdf]] pro komplexní analýzu a [[KANA/transformace.pdf]] pro Fourierovy řady, Fourierovu transformaci, Laplaceovu transformaci a Z-transformaci.
+- Poznámky používají Obsidian LaTeX, český text s diakritikou, zdroje po sekcích jako wikilinky na PDF a odkazy mezi souvisejícími tématy.
+- Poznámka k nástrojům: PDF MCP v této části nebyl stabilní, proto byl text extrahován lokálně z dodaných PDF pomocí `pdftotext`; nebyly použity externí zdroje.
