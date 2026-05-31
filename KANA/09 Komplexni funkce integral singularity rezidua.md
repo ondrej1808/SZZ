@@ -259,19 +259,13 @@ Zdroj: [[testkom.pdf#page=133|testkom, s. 133-139]]
 
 ## Reziduová věta
 
-Obecná reziduová věta používá index bodu ke křivce:
+Pro potřeby státnic stačí standardní verze pro kladně orientovanou jednoduchou uzavřenou křivku. Je-li $f$ holomorfní uvnitř a na křivce $C$ až na konečně mnoho izolovaných singularit $z_1,\dots,z_k$ ležících uvnitř $C$, potom
 
 $$
-\operatorname{Ind}_C z_0=\frac1{2\pi i}\int_C\frac{dz}{z-z_0}.
+\int_C f(z)\,dz=2\pi i\sum_{j=1}^k \operatorname{res}_{z_j} f.
 $$
 
-Je-li $G\subset\mathbb C$ oblast a $f$ je holomorfní na $G$ až na konečnou množinu izolovaných singularit $M$, potom pro uzavřenou křivku $C\subset G\setminus M$ platí
-
-$$
-\int_C f(z)\,dz=2\pi i\sum_{z\in M}\operatorname{Ind}_C z\cdot \operatorname{res}_z f.
-$$
-
-Pro kladně orientovanou jednoduchou křivku to znamená, že do integrálu přispívají právě singularity uvnitř křivky, každá svým reziduem.
+Do integrálu tedy přispívají právě singularity uvnitř křivky, každá svým reziduem. Singularity vně křivky se do součtu neberou.
 
 Pokud je funkce holomorfní v celé rovině kromě konečně mnoha singularit $z_1,\dots,z_k$, platí součtový vztah
 

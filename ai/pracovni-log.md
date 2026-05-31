@@ -86,3 +86,45 @@ Přidán `README.md` s rychlým návodem pro ostatní: instalace `pdf-mcp[semant
 - Otázka 11 čerpá hlavně z definic náhodné veličiny, distribuční funkce, diskrétního a spojitého rozdělení, momentů, rozptylu, náhodného vektoru, korelace a nezávislosti.
 - Otázka 12 čerpá z CLV, bodových odhadů, metody maximální věrohodnosti, principu testování hypotéz, t-testů a chí-kvadrát testu dobré shody.
 - Poznámky používají Obsidian LaTeX, český text s diakritikou, wikilinky a zdroje u sekcí.
+
+
+## 2026-05-31 - EMPA otázky 13-14
+
+- Zpracovány odborné otázky 13 a 14 do složky `EMPA`:
+  - [[13 Elektricke a magneticke pole elektrostatika kapacita]]
+  - [[14 Stacionarni magneticke pole indukcnost Faraday]]
+- Použitý podklad: [[empa_complete_edition.pdf]].
+- Otázka 13 čerpá hlavně z kapitol 1-5: klasifikace polí, vodiče a dielektrika, veličiny $\mathbf E,\mathbf D,\mathbf P$, Gaussova věta, potenciál, kapacita, energie a metoda zrcadlení.
+- Otázka 14 čerpá hlavně z kapitol 7-10: stacionární magnetické pole, Biotův-Savartův zákon, Ampérův zákon, magnetické materiály, energie pole, indukčnost, magnetické obvody a Faradayův zákon.
+- `hex_compost.pdf` použit pouze kontrolně pro rozsah. U indukčností základních uspořádání ponechán todo blok, protože hlavní EMPA text odkazuje detailní vztahy na příklady MG/35.
+
+
+## 2026-05-31 - ELD otázky 15-16
+
+- Zpracovány odborné otázky 15 a 16 do složky `ELD`:
+  - [[15 Elektromagneticka vlna v neomezenem prostredi a rozhrani]]
+  - [[16 Vedene a evanescentni vlny vlnovody vedeni]]
+- Použitý podklad: [[Elektromagnetická vlna_13_5_2021.pdf]].
+- Otázka 15 čerpá hlavně z kapitol 1 a 2: Maxwellovy rovnice, rovinná harmonická vlna, vlnová impedance, vlnová délka, rychlosti, Poyntingův vektor, polarizace, rozhraní, Snellovy zákony, totální odraz, evanescentní vlna a Brewsterův úhel.
+- Otázka 16 čerpá hlavně z kapitol 2.6.4, 2.6.6, 3 a 4: vedená a evanescentní vlna, obdélníkový vlnovod, módy TE/TM, dominantní mód TE10, impedance ve vlnovodu, výkon, vlna TEM na vedení, odraz a stojaté vlnění.
+- `hex_compost.pdf` použit kontrolně pro rozsah. Ponechány todo bloky pro Gaussův svazek, válcovou vlnu, elementární zářiče, blízké/přechodné/vzdálené pole a anizotropní prostředí, protože tyto části nejsou v dodaném ELD PDF samostatně doložené.
+
+
+## 2026-05-31 - Oprava KANA značení transformací
+
+- Upraveno [[09 Komplexni funkce integral singularity rezidua]]: odstraněn zbytečný index křivky `Ind` z reziduové věty, ponechána jednodušší verze pro kladně orientovanou jednoduchou křivku a singularity uvnitř.
+- Upraveno [[10 Fourier Laplace Z transformace]]: Z-transformace značena jako $\mathbb Z$, Laplaceova transformace zůstává $\mathcal L$, Fourierova transformace $\mathcal F$.
+- Opravena rozbitá LaTeX sekvence v inverzní Fourierově větě.
+- Přidán přehled [[10a Srovnani transformaci Fourier Laplace Z]] se sloupci značka, transformace, přímá transformace, inverzní transformace a spojitá/diskrétní povaha.
+
+
+## 2026-05-31 - SAS otázky 19-20
+
+- Zpracovány odborné otázky 19 a 20 do složky `SAS`:
+  - [[19 Signaly casova spektralni reprezentace vzorkovani nahodne procesy]]
+  - [[20 Soustavy LTI konvoluce stabilita pasmove signaly modulace]]
+- Použitý podklad: [[SAS/sas_cviceni_v0.96_250225.pdf]].
+- Otázka 19 čerpá hlavně z kapitol 2, 4, 5 a 11: energie, výkon, autokorelace, Fourierovy reprezentace, vzorkování, stacionární a ergodické procesy a bílý šum.
+- Otázka 20 čerpá hlavně z kapitol 7, 8 a 9: klasifikace soustav, LTI soustavy, impulsová odezva, konvoluce, stabilita, popis Laplaceovou a Z-transformací a kmitočtový popis.
+- Podle požadavku přidány TikZ grafy k definovaným konceptům. `hex_compost.pdf` použit kontrolně: doplněna klasifikace deterministický/stochastický signál a potvrzen rozsah k pásmovému signálu, komplexní obálce a analogovým modulacím.
+- Část Hilbertovy transformace, komplexní obálky a analogových modulací je označena jako TODO, protože dodané SAS PDF obsahuje hlavně zadání teoretických otázek, nikoli výklad.

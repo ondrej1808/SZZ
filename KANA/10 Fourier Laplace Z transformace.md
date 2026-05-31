@@ -2,6 +2,8 @@
 
 **Otázka:** Fourierovy řady, Fourierova a Laplaceova transformace - význam, gramatika, věty o inverzi. Přímá a zpětná transformace Z. Aplikace transformací na řešení diferenciálních a diferenčních rovnic.
 
+> Přehledové srovnání značení a vztahů je v samostatné poznámce [[10a Srovnani transformaci Fourier Laplace Z]].
+
 ## Fourierovy řady
 
 Fourierova řada popisuje periodickou funkci pomocí harmonických složek. Je-li $f$ periodická s periodou $T>0$ a $\omega=2\pi/T$, její komplexní Fourierovy koeficienty jsou
@@ -70,7 +72,8 @@ $$
 Pokud jsou $f$ a $f'$ po částech spojité, potom platí bodová rekonstrukce ve tvaru
 
 $$
-\frac{f(t+)+f(t-)}2=rac1{2\pi}\int_{-\infty}^{\infty}\widehat f(\omega)e^{i\omega t}\,d\omega.
+\frac{f(t+)+f(t-)}2=
+\frac1{2\pi}\int_{-\infty}^{\infty}\widehat f(\omega)e^{i\omega t}\,d\omega.
 $$
 
 Tato věta říká, že Fourierova transformace za vhodných podmínek obsahuje úplnou informaci o původním signálu. Dvě spojité funkce z $L^1(\mathbb R)$ se stejnou Fourierovou transformací jsou stejné.
@@ -295,7 +298,7 @@ Zdroj: [[transformace.pdf#page=36|transformace, s. 36-44]]
 Z-transformace je diskrétní analogie Laplaceovy transformace a používá se pro posloupnosti a diferenční rovnice. Posloupnosti $(a_n)_{n=0}^{\infty}$ přiřazuje funkci
 
 $$
-Z[a_n](z)=F(z)=\sum_{n=0}^{\infty}\frac{a_n}{z^n}.
+\mathbb Z[a_n](z)=F(z)=\sum_{n=0}^{\infty}\frac{a_n}{z^n}.
 $$
 
 Podklad pracuje s posloupnostmi nejvýše exponenciálního růstu, tedy existují $M\ge 0$ a $c\in\mathbb R$ tak, že
@@ -309,25 +312,25 @@ Tato podmínka je ekvivalentní tomu, že řada pro Z-transformaci konverguje v 
 Základní příklad:
 
 $$
-Z[a^n](z)=\frac{z}{z-a}, \qquad |z|>|a|.
+\mathbb Z[a^n](z)=\frac{z}{z-a}, \qquad |z|>|a|.
 $$
 
 Zdroj: [[transformace.pdf#page=50|transformace, s. 50-54]]
 
 ## Gramatika Z-transformace
 
-Je-li $Z[a_n](z)=F(z)$, potom platí:
+Je-li $\mathbb Z[a_n](z)=F(z)$, potom platí:
 
 $$
-Z[\alpha a_n+\beta b_n](z)=\alpha Z[a_n](z)+\beta Z[b_n](z),
-$$
-
-$$
-Z[\alpha^n a_n](z)=F\left(\frac z\alpha\right), \qquad \alpha\ne 0,
+\mathbb Z[\alpha a_n+\beta b_n](z)=\alpha \mathbb Z[a_n](z)+\beta \mathbb Z[b_n](z),
 $$
 
 $$
-Z[n a_n](z)=-zF'(z).
+\mathbb Z[\alpha^n a_n](z)=F\left(\frac z\alpha\right), \qquad \alpha\ne 0,
+$$
+
+$$
+\mathbb Z[n a_n](z)=-zF'(z).
 $$
 
 Posun vpravo: je-li
@@ -342,13 +345,13 @@ $$
 potom
 
 $$
-Z[b_n](z)=\frac1{z^k}F(z).
+\mathbb Z[b_n](z)=\frac1{z^k}F(z).
 $$
 
 Posun vlevo:
 
 $$
-Z[a_{n+k}](z)=z^k\left(F(z)-\sum_{n=0}^{k-1}\frac{a_n}{z^n}\right).
+\mathbb Z[a_{n+k}](z)=z^k\left(F(z)-\sum_{n=0}^{k-1}\frac{a_n}{z^n}\right).
 $$
 
 Diference posloupnosti je
@@ -360,7 +363,7 @@ $$
 a její obraz je
 
 $$
-Z[\Delta a_n](z)=(z-1)F(z)-za_0.
+\mathbb Z[\Delta a_n](z)=(z-1)F(z)-za_0.
 $$
 
 Zdroj: [[transformace.pdf#page=54|transformace, s. 54-57]]
@@ -376,7 +379,7 @@ $$
 Z-transformace převádí konvoluci na součin:
 
 $$
-Z[c_n](z)=Z[a_n](z)Z[b_n](z).
+\mathbb Z[c_n](z)=\mathbb Z[a_n](z)\mathbb Z[b_n](z).
 $$
 
 Toto je diskrétní obdoba vztahu pro Fourierovu transformaci. V podkladu je konvoluce interpretována také jako odezva lineárního translačně invariantního diskrétního systému: výstup je konvoluce vstupu s odezvou systému na jednotkový impuls.
@@ -384,7 +387,7 @@ Toto je diskrétní obdoba vztahu pro Fourierovu transformaci. V podkladu je kon
 Pro částečné součty platí
 
 $$
-Z\left[\sum_{k=0}^{n} a_k\right](z)=\frac{zF(z)}{z-1}.
+\mathbb Z\left[\sum_{k=0}^{n} a_k\right](z)=\frac{zF(z)}{z-1}.
 $$
 
 Zdroj: [[transformace.pdf#page=57|transformace, s. 57-60]]
@@ -426,7 +429,7 @@ Zdroj: [[transformace.pdf#page=60|transformace, s. 60-63]]
 
 Z-transformace řeší diferenční rovnice podobně jako Laplaceova transformace řeší diferenciální rovnice. Typický postup je:
 
-1. Označit $Y(z)=Z[y_n](z)$.
+1. Označit $Y(z)=\mathbb Z[y_n](z)$.
 2. Použít pravidla pro posun vlevo nebo pro diference.
 3. Dosadit počáteční podmínky.
 4. Vyjádřit $Y(z)$.

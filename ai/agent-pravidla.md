@@ -13,11 +13,14 @@
 - Pokud informace v podkladech není nalezena, explicitně to označit.
 
 ## Aktuální práce
-- Předmět: PST
-- Podklady: `PST/01PST_zapisky.pdf`
-- Zdrojový seznam otázek: `SZZ - Teoretické okruhy.md`
-- Otázky PST:
-  11. Náhodná veličina a náhodný vektor. Distribuční funkce, hustota a pravděpodobnostní funkce náhodné veličiny. Střední hodnota a rozptyl náhodné veličiny a jejich odhady. Korelace a nezávislost náhodných veličin.
-  12. Centrální limitní věta. Metoda maximální věrohodnosti. Základní principy statistického testování hypotéz, testy střední hodnoty. Chí-kvadrát test dobré shody.
+- Oblast: odborné okruhy
+- Podklady: `EMPA/empa_complete_edition.pdf`, `ELD/Elektromagnetická vlna_13_5_2021.pdf`
+- Kontrola rozsahu: `hex_compost.pdf`
+- Zdrojový seznam otázek: `SZZ - Odborné okruhy.md`
+- Otázky EMPA/ELD:
+  13. Elektrické a magnetické pole a jeho zdroje; elektrostatika, Gaussova věta, metoda zrcadlení, energie a kapacita.
+  14. Stacionární magnetické pole; Biotův-Savartův zákon, Ampérův zákon, energie, indukčnost, Faradayův zákon.
+  15. Elektromagnetická vlna v neomezeném prostředí; Maxwellovy rovnice, typy vln, rozhraní, totální odraz, evanescentní vlna, polarizace odrazem.
+  16. Vedené a evanescentní vlny; mody, impedance, fázová a skupinová rychlost, výkon, elementární zářiče, blízké/přechodné/vzdálené pole, anizotropní prostředí.
 
 - V běžném českém textu vždy používat správnou gramatiku včetně háčků a čárek. Bez diakritiky psát jen tam, kde to vyžaduje technický identifikátor, název souboru, příkaz, kód nebo doslovný zápis z podkladů.
