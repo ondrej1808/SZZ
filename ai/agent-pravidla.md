@@ -13,14 +13,11 @@
 - Pokud informace v podkladech není nalezena, explicitně to označit.
 
 ## Aktuální práce
-- Oblast: odborné okruhy
-- Podklady: `EMPA/empa_complete_edition.pdf`, `ELD/Elektromagnetická vlna_13_5_2021.pdf`
-- Kontrola rozsahu: `hex_compost.pdf`
-- Zdrojový seznam otázek: `SZZ - Odborné okruhy.md`
-- Otázky EMPA/ELD:
-  13. Elektrické a magnetické pole a jeho zdroje; elektrostatika, Gaussova věta, metoda zrcadlení, energie a kapacita.
-  14. Stacionární magnetické pole; Biotův-Savartův zákon, Ampérův zákon, energie, indukčnost, Faradayův zákon.
-  15. Elektromagnetická vlna v neomezeném prostředí; Maxwellovy rovnice, typy vln, rozhraní, totální odraz, evanescentní vlna, polarizace odrazem.
-  16. Vedené a evanescentní vlny; mody, impedance, fázová a skupinová rychlost, výkon, elementární zářiče, blízké/přechodné/vzdálené pole, anizotropní prostředí.
+- Poslední dokončená oblast: odborné okruhy, `TSI` otázky 29-30.
+- Vytvořené poznámky:
+  - [[TSI/29 Komunikacni kanal digitalni prenosy telefonie xDSL]]
+  - [[TSI/30 Bunkove mobilni site GSM GPRS EDGE UMTS]]
+- Použité podklady: přednáškové PDF ve složce `TSI`.
+- Předchozí dokončená práce před TSI: `SAS` otázky 19-20 a přehled [[SAS/19a Srovnani spektralnich reprezentaci signalu]].
 
 - V běžném českém textu vždy používat správnou gramatiku včetně háčků a čárek. Bez diakritiky psát jen tam, kde to vyžaduje technický identifikátor, název souboru, příkaz, kód nebo doslovný zápis z podkladů.

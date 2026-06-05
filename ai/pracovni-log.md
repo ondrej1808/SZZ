@@ -128,3 +128,30 @@ Přidán `README.md` s rychlým návodem pro ostatní: instalace `pdf-mcp[semant
 - Otázka 20 čerpá hlavně z kapitol 7, 8 a 9: klasifikace soustav, LTI soustavy, impulsová odezva, konvoluce, stabilita, popis Laplaceovou a Z-transformací a kmitočtový popis.
 - Podle požadavku přidány TikZ grafy k definovaným konceptům. `hex_compost.pdf` použit kontrolně: doplněna klasifikace deterministický/stochastický signál a potvrzen rozsah k pásmovému signálu, komplexní obálce a analogovým modulacím.
 - Část Hilbertovy transformace, komplexní obálky a analogových modulací je označena jako TODO, protože dodané SAS PDF obsahuje hlavně zadání teoretických otázek, nikoli výklad.
+
+
+## 2026-05-31 - MA2A TikZ grafy
+
+- Upraveny poznámky `MA2A`, aby nevyžadovaly externí obrázky:
+  - [[07 Funkce vice promennych, gradient, extremy]]
+  - [[08 Vicerozmerne integraly a integralni vety]]
+- Původní todo bloky „DOPLNIT OBRÁZEK“ nahrazeny TikZ náčrty: graf funkce a vrstevnice, gradient a vrstevnice, Lagrangeovy vázané extrémy, základní integrační oblast, tok přes orientovanou plochu a orientace ve Stokesově větě.
+
+
+## 2026-05-31 - SAS přehled spektrálních reprezentací
+
+- Přidán samostatný přehled [[19a Srovnani spektralnich reprezentaci signalu]].
+- Tabulka srovnává spojitý/diskrétní a periodický/neperiodický signál, odpovídající typ spektra, opačný směr inverze a používanou reprezentaci FS/FT/DFS/DtFT.
+- Z [[19 Signaly casova spektralni reprezentace vzorkovani nahodne procesy]] přidán odkaz na nový přehled.
+
+
+## 2026-06-05 - TSI otázky 29-30
+
+- Před zahájením práce přečtena složka `ai`; poslední dokončená práce byla SAS otázky 19-20 a přehled spektrálních reprezentací.
+- Zpracovány odborné otázky 29 a 30 do složky `TSI`:
+  - [[29 Komunikacni kanal digitalni prenosy telefonie xDSL]]
+  - [[30 Bunkove mobilni site GSM GPRS EDGE UMTS]]
+- Použité podklady: přednášky `TSI/01`, `TSI/02`, `TSI/04`, `TSI/07`, `TSI/08`, `TSI/10`, `TSI/12` a kontrolně `TSI/13`.
+- Otázka 29 čerpá hlavně z informační propustnosti a E-modelu, telefonního kanálu, PCM 30/32, PDH/SDH/OTH, digitálních spojovacích systémů, VoIP signalizace a xDSL.
+- Otázka 30 čerpá hlavně z buňkového principu, metod FDMA/TDMA/CDMA, handoveru, architektury GSM, datových služeb CSD/HSCSD/GPRS/EDGE a UMTS.
+- TikZ grafy nebyly přidány; u těchto dvou otázek byly přednáškové diagramy nahrazeny stručným textovým popisem struktur a procesů.

@@ -45,7 +45,28 @@ $$
 $$
 Na rozdíl od obdélníku nelze pořadí integrace prohodit mechanicky bez změny mezí. Zdroj: [[integralni_pocet_vice_prom.pdf#page=27|Integrální počet více proměnných, integrály přes základní oblasti, s. 27-32]]
 
-> [!todo] DOPLNIT OBRÁZEK: základní oblast se svislými řezy $s_1(x)\le y\le s_2(x)$ a vodorovnými řezy $p_1(y)\le x\le p_2(y)$.
+```tikz
+\begin{document}
+  \begin{tikzpicture}[x=0.95cm,y=0.95cm]
+    \draw[->] (-0.2,0) -- (5.6,0) node[right] {$x$};
+    \draw[->] (0,-0.2) -- (0,3.6) node[above] {$y$};
+
+    \draw[color=blue,thick,domain=0.8:4.8,samples=80] plot (\x,{0.55+0.22*(\x-2.7)*(\x-2.7)});
+    \draw[color=blue,thick,domain=0.8:4.8,samples=80] plot (\x,{2.75-0.18*(\x-2.7)*(\x-2.7)});
+    \fill[color=blue,opacity=0.12] (0.8,1.34)
+      -- plot[domain=0.8:4.8,samples=80] (\x,{2.75-0.18*(\x-2.7)*(\x-2.7)})
+      -- (4.8,1.65)
+      -- plot[domain=4.8:0.8,samples=80] (\x,{0.55+0.22*(\x-2.7)*(\x-2.7)})
+      -- cycle;
+
+    \draw[dashed] (2.4,0) node[below] {$x$} -- (2.4,2.73);
+    \draw[<->,color=red,thick] (2.4,0.57) -- (2.4,2.73) node[midway,right] {$s_1(x)\le y\le s_2(x)$};
+    \draw[dashed] (0,1.65) node[left] {$y$} -- (4.8,1.65);
+    \draw[<->,color=orange,thick] (0.95,1.65) -- (4.8,1.65) node[midway,above] {$p_1(y)\le x\le p_2(y)$};
+    \node[color=blue] at (4.4,3.15) {$T$};
+  \end{tikzpicture}
+\end{document}
+```
 
 ## Substituce v dvojném integrálu
 
@@ -183,7 +204,25 @@ $$
 $$
 Zdroj: [[integralni_pocet_vice_prom.pdf#page=148|Integrální počet více proměnných, plošný integrál vektorového pole, s. 149-155]]
 
-> [!todo] DOPLNIT OBRÁZEK: orientovaná plocha, normálové pole $n$ a tok vektorového pole přes plochu.
+```tikz
+\begin{document}
+  \begin{tikzpicture}[x=0.95cm,y=0.95cm]
+    \draw[->] (-0.2,0) -- (5.7,0) node[right] {$x$};
+    \draw[->] (0,-0.2) -- (1.7,1.2) node[above] {$y$};
+    \draw[->] (0,0) -- (0,3.4) node[above] {$z$};
+
+    \fill[color=blue,opacity=0.16] (1.1,0.8) -- (4.4,1.15) -- (5.0,2.25) -- (1.75,1.9) -- cycle;
+    \draw[color=blue,thick] (1.1,0.8) -- (4.4,1.15) -- (5.0,2.25) -- (1.75,1.9) -- cycle;
+    \node[color=blue] at (4.7,2.65) {$(M)$};
+
+    \draw[->,color=red,very thick] (3.05,1.55) -- (3.05,3.0) node[above] {$n$};
+    \foreach \x/\y in {1.1/2.6,2.0/2.85,3.1/2.65,4.2/2.9}
+      \draw[->,color=orange,thick] (\x,\y) -- (\x+0.55,\y-0.9);
+    \node[color=orange] at (1.35,3.25) {$F$};
+    \node at (2.7,0.35) {$F\cdot n$ měří tok přes plochu};
+  \end{tikzpicture}
+\end{document}
+```
 
 ## Gaussova věta
 
@@ -230,7 +269,25 @@ $$
 $$
 Je to prostorové zobecnění Greenovy věty: křivkový integrál po kraji plochy odpovídá plošnému integrálu rotace přes plochu. Zdroj: [[integralni_pocet_vice_prom.pdf#page=170|Integrální počet více proměnných, Stokesova věta, s. 170-173]]
 
-> [!todo] DOPLNIT OBRÁZEK: souhlasná orientace kraje $C$ a plochy $M$ pro Stokesovu větu.
+```tikz
+\begin{document}
+  \begin{tikzpicture}[x=0.95cm,y=0.95cm]
+    \draw[->] (-0.2,0) -- (5.8,0) node[right] {$x$};
+    \draw[->] (0,-0.2) -- (1.8,1.2) node[above] {$y$};
+    \draw[->] (0,0) -- (0,3.4) node[above] {$z$};
+
+    \fill[color=blue,opacity=0.14] (3,1.5) ellipse (1.65 and 0.65);
+    \draw[color=blue,thick] (3,1.5) ellipse (1.65 and 0.65);
+    \node[color=blue] at (4.9,1.8) {$M$};
+
+    \draw[->,color=red,very thick] (3,1.5) -- (3,3.0) node[above] {$n$};
+    \draw[->,color=orange,thick] (4.55,1.5) arc (0:70:1.65 and 0.65);
+    \draw[->,color=orange,thick] (1.45,1.5) arc (180:250:1.65 and 0.65);
+    \node[color=orange] at (3,0.45) {$C=K(M)$};
+    \node at (3,3.35) {orientace $C$ souhlasí s $n$};
+  \end{tikzpicture}
+\end{document}
+```
 
 ## Potenciál vektorového pole
 

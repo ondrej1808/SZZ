@@ -20,7 +20,39 @@ $$
 $$
 Zdroj: [[dipocet.pdf#page=16|Diferenciální počet, funkce více proměnných, s. 17-21]]
 
-> [!todo] DOPLNIT OBRÁZEK: graf funkce $z=f(x,y)$ a její vrstevnice v rovině $xy$.
+```tikz
+\begin{document}
+  \begin{tikzpicture}[x=0.9cm,y=0.9cm]
+    \draw[->] (0,0) -- (5.2,0) node[right] {$x$};
+    \draw[->] (0,0) -- (1.8,1.5) node[above] {$y$};
+    \draw[->] (0,0) -- (0,3.4) node[above] {$z$};
+
+    \draw[color=gray,thin] (0.8,0.45) -- (4.7,0.45);
+    \draw[color=gray,thin] (1.15,0.75) -- (5.05,0.75);
+    \draw[color=gray,thin] (1.5,1.05) -- (5.4,1.05);
+    \draw[color=gray,thin] (0.8,0.45) -- (1.5,1.05);
+    \draw[color=gray,thin] (2.1,0.45) -- (2.8,1.05);
+    \draw[color=gray,thin] (3.4,0.45) -- (4.1,1.05);
+    \draw[color=gray,thin] (4.7,0.45) -- (5.4,1.05);
+
+    \draw[color=blue,thick] plot[smooth] coordinates {(0.8,1.1) (1.6,1.75) (2.6,2.0) (3.7,1.75) (4.7,1.1)};
+    \draw[color=blue,thick] plot[smooth] coordinates {(1.15,1.35) (2.0,2.15) (3.0,2.45) (4.05,2.15) (5.05,1.35)};
+    \draw[color=blue,thick] plot[smooth] coordinates {(1.5,1.6) (2.4,2.55) (3.4,2.9) (4.45,2.55) (5.4,1.6)};
+    \draw[color=blue,thick] (0.8,1.1) -- (1.5,1.6);
+    \draw[color=blue,thick] (4.7,1.1) -- (5.4,1.6);
+    \node[color=blue] at (4.2,3.0) {$z=f(x,y)$};
+
+    \begin{scope}[shift={(0,-2.0)}]
+      \draw[->] (0,0) -- (5.2,0) node[right] {$x$};
+      \draw[->] (0,0) -- (0,1.8) node[above] {$y$};
+      \draw[color=orange,thick] (2.6,0.8) ellipse (1.45 and 0.55);
+      \draw[color=orange,thick] (2.6,0.8) ellipse (1.0 and 0.38);
+      \draw[color=orange,thick] (2.6,0.8) ellipse (0.55 and 0.22);
+      \node[color=orange] at (4.3,1.55) {$f(x,y)=c$};
+    \end{scope}
+  \end{tikzpicture}
+\end{document}
+```
 
 ## Směrová a parciální derivace
 
@@ -80,7 +112,24 @@ $$
 $$
 Zdroj: [[dipocet.pdf#page=68|Diferenciální počet, geometrický význam diferenciálu, s. 68-71]]
 
-> [!todo] DOPLNIT OBRÁZEK: vrstevnice funkce, gradient kolmý na vrstevnici a směr největšího růstu.
+```tikz
+\begin{document}
+  \begin{tikzpicture}[x=0.9cm,y=0.9cm]
+    \draw[->] (-3.2,0) -- (3.4,0) node[right] {$x$};
+    \draw[->] (0,-2.4) -- (0,2.6) node[above] {$y$};
+
+    \draw[color=orange,thick] (0,0) ellipse (2.5 and 1.65);
+    \draw[color=orange,thick] (0,0) ellipse (1.75 and 1.15);
+    \draw[color=orange,thick] (0,0) ellipse (1.0 and 0.65);
+    \fill (1.75,1.15) circle (1.5pt) node[above right] {$x_0$};
+
+    \draw[->,color=blue,very thick] (1.75,1.15) -- (2.75,1.8) node[right] {$\operatorname{grad} f$};
+    \draw[->,color=red,thick] (1.75,1.15) -- (1.1,1.55) node[left] {$h,\ \partial_h f=0$};
+    \node[color=orange] at (-2.1,1.9) {vrstevnice};
+    \node[color=blue] at (2.1,0.55) {největší růst};
+  \end{tikzpicture}
+\end{document}
+```
 
 ## Derivace složené funkce
 
@@ -162,7 +211,27 @@ $$
 $$
 Zdroj: [[dipocet.pdf#page=114|Diferenciální počet, vázané extrémy, s. 114-118]]
 
-> [!todo] DOPLNIT OBRÁZEK: vázaný extrém na křivce $g(x,y)=0$, kde je $\operatorname{grad}f$ rovnoběžný s $\operatorname{grad}g$.
+```tikz
+\begin{document}
+  \begin{tikzpicture}[x=0.9cm,y=0.9cm]
+    \draw[->] (-3.2,0) -- (3.4,0) node[right] {$x$};
+    \draw[->] (0,-2.4) -- (0,2.6) node[above] {$y$};
+
+    \draw[color=gray,thick] plot[smooth cycle] coordinates {(-2.0,0.0) (-1.2,1.25) (0.3,1.7) (1.8,0.9) (1.9,-0.8) (0.4,-1.55) (-1.4,-1.2)};
+    \node[color=gray] at (-2.2,1.35) {$g(x,y)=0$};
+
+    \draw[color=orange,thick] (0.9,0.55) ellipse (1.7 and 0.9);
+    \draw[color=orange,thick] (0.9,0.55) ellipse (1.15 and 0.6);
+    \draw[color=orange,thick] (0.9,0.55) ellipse (0.6 and 0.32);
+    \node[color=orange] at (2.3,1.85) {$f(x,y)=c$};
+
+    \fill (1.75,0.95) circle (1.6pt) node[above right] {$x_0$};
+    \draw[->,color=blue,very thick] (1.75,0.95) -- (2.65,1.5) node[right] {$\operatorname{grad} f$};
+    \draw[->,color=red,thick] (1.75,0.95) -- (2.45,1.38) node[below right] {$\operatorname{grad} g$};
+    \node at (0,-2.0) {$\operatorname{grad}f=\lambda\operatorname{grad}g$};
+  \end{tikzpicture}
+\end{document}
+```
 
 ## Jak postupovat u příkladu
 
