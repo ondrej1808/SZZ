@@ -1,7 +1,7 @@
 # 20 Soustavy, LTI popis, konvoluce, stabilita a pásmové signály
 
 > [!info] Podklady
-> Hlavní zdroj: [[sas_cviceni_v0.96_250225.pdf]]. Soustavy jsou zpracované podle kapitol 7, 8 a 9. Části k Hilbertově transformaci, komplexní obálce a analogovým modulacím jsou v dodaném PDF zachyceny hlavně jako otázky bez samostatného výkladu, proto jsou níže označené jako TODO.
+> Hlavní zdroj: [[sas_cviceni_v0.96_250225.pdf]]. Soustavy jsou zpracované podle kapitol 7, 8 a 9. Pásmové signály, Hilbertova transformace, komplexní obálka a analogové modulace jsou v dodaném PDF zachyceny hlavně ve znění teoretických otázek, proto je u nich uveden zdroj výskytu otázky.
 
 ## Soustava a základní klasifikace
 
@@ -387,40 +387,131 @@ U kauzální soustavy platí $H_F(\Omega)=H_Z(e^{j\Omega})$, pokud oblast konver
 
 ## Pásmové signály, Hilbertova transformace a modulace
 
-> [!warning] Nedostatečný výklad v dodaném PDF
-> V textově extrahovaném [[sas_cviceni_v0.96_250225.pdf]] jsem našel Hilbertovu transformaci, komplexní obálku, pásmové signály a analogovou modulaci hlavně v seznamu teoretických otázek, nikoli jako samostatnou vyloženou kapitolu. Konkrétní výskyty jsou na [[sas_cviceni_v0.96_250225.pdf#page=188|SAS s. 188-189]] a [[sas_cviceni_v0.96_250225.pdf#page=191|SAS s. 191]]. `hex_compost.pdf` kontrolně potvrzuje otázky „analogové modulace a jejich spektrum“, „jak získat komplexní obálku“ a „co je pásmový signál“ v části položených otázek. Zdroj: [[hex_compost.pdf#page=240|HEX s. 240]]. Níže proto nechávám osnovu k doplnění z přednášek nebo dalšího zdroje.
+> [!note] Rozsah v podkladech
+> V textově extrahovaném [[sas_cviceni_v0.96_250225.pdf]] jsou Hilbertova transformace, komplexní obálka, pásmové signály a analogová modulace zachyceny hlavně jako teoretické otázky, nikoli jako samostatná vyložená kapitola. Konkrétní výskyty jsou na [[sas_cviceni_v0.96_250225.pdf#page=188|SAS s. 188-189]] a u AM na [[sas_cviceni_v0.96_250225.pdf#page=191|SAS s. 191]]. `hex_compost.pdf` kontrolně potvrzuje otázky „analogové modulace a jejich spektrum“, „jak získat komplexní obálku“ a „co je pásmový signál“. Zdroj: [[hex_compost.pdf#page=240|HEX s. 240]].
 
-**Hilbertova transformace**: doplnit definiční vztah, impulsovou odezvu a kmitočtovou charakteristiku Hilbertova transformátoru. V PDF je požadováno uvést definiční vztah a nakreslit charakteristiku $H(\omega)$. Zdroj výskytu otázky: [[sas_cviceni_v0.96_250225.pdf#page=188|SAS s. 188]], [[sas_cviceni_v0.96_250225.pdf#page=191|SAS s. 191]].
+**Pásmový signál** má spektrum soustředěné kolem nenulové nosné úhlové frekvence $\omega_c$. Pro reálný pásmový signál je spektrum sdruženě symetrické, takže obsahuje kladné pásmo okolo $+\omega_c$ a záporné pásmo okolo $-\omega_c$. Pásmový signál lze popsat pomocí komplexní obálky v základním pásmu:
 
-```tikz
-\begin{document}
-  \begin{tikzpicture}[x=0.85cm,y=0.75cm]
-    \draw[->] (-3.3,0) -- (3.5,0) node[right] {$\omega$};
-    \draw[->] (0,-1.4) -- (0,1.6) node[above] {$H(\omega)$};
-    \draw[color=gray,dashed] (-3,1) -- (3,1);
-    \draw[color=gray,dashed] (-3,-1) -- (3,-1);
-    \node at (0,-1.75) {TODO: doplnit přesnou charakteristiku ze zdroje};
-  \end{tikzpicture}
-\end{document}
-```
+$$
+s(t)=\operatorname{Re}\{\tilde s(t)e^{j\omega_c t}\}.
+$$
 
-**Komplexní obálka pásmového signálu**: doplnit vztah pro převod reálného pásmového signálu $s(t)$ na komplexní obálku $\tilde s(t)$ a zpět. PDF tuto část požaduje v teoretických otázkách. Zdroj výskytu otázky: [[sas_cviceni_v0.96_250225.pdf#page=188|SAS s. 188-189]].
+Komplexní obálka $\tilde s(t)$ je pomalu proměnný komplexní signál, který nese informaci o amplitudě i fázi vůči nosné. Zdroj výskytu otázky: [[sas_cviceni_v0.96_250225.pdf#page=188|SAS s. 188-189]], kontrolně [[hex_compost.pdf#page=240|HEX s. 240]].
 
 ```tikz
 \begin{document}
   \begin{tikzpicture}[x=0.8cm,y=0.75cm]
-    \draw[->] (-4.2,0) -- (4.4,0) node[right] {$\omega$};
+    \draw[->] (-4.4,0) -- (4.6,0) node[right] {$\omega$};
     \draw[->] (0,-0.2) -- (0,1.6);
-    \draw[color=blue,thick] (-3.2,0) -- (-2.7,1.0) -- (-2.2,0);
-    \draw[color=blue,thick] (2.2,0) -- (2.7,1.0) -- (3.2,0);
-    \draw[color=red,thick,dashed] (-0.5,0) -- (0,1.0) -- (0.5,0);
-    \node[color=blue] at (2.7,1.3) {pásmo okolo $\omega_c$};
-    \node[color=red] at (0,1.3) {obálka v základním pásmu};
+    \draw[color=blue,thick] (-3.4,0) -- (-2.8,1.0) -- (-2.2,0);
+    \draw[color=blue,thick] (2.2,0) -- (2.8,1.0) -- (3.4,0);
+    \draw[dashed] (-2.8,0) -- (-2.8,1.15);
+    \draw[dashed] (2.8,0) -- (2.8,1.15);
+    \node at (-2.8,-0.32) {$-\omega_c$};
+    \node at (2.8,-0.32) {$\omega_c$};
+    \node[color=blue] at (0,1.25) {reálný pásmový signál};
   \end{tikzpicture}
 \end{document}
 ```
 
-**Základní analogové modulace**: doplnit minimálně AM se zachovanou nosnou a další typy modulací podle přednášek. PDF explicitně žádá vztah pro $s_{AM}(t)$ při nosné $\omega_c$, amplitudě $A_c$, modulačním signálu $s_M(t)$ a činiteli modulace $m$, ale samotný výklad v extrahovaném textu není. Zdroj výskytu otázky: [[sas_cviceni_v0.96_250225.pdf#page=191|SAS s. 191]].
+**Hilbertova transformace** signálu $s(t)$ se značí $\mathcal H\{s(t)\}$ a lze ji chápat jako průchod LTI soustavou s impulsovou odezvou
+
+$$
+h_H(t)=\frac{1}{\pi t}.
+$$
+
+Formálně:
+
+$$
+\hat s(t)=\mathcal H\{s(t)\}=s(t)*\frac{1}{\pi t}.
+$$
+
+V kmitočtové oblasti Hilbertův transformátor nemění amplitudy složek, ale zavádí fázový posun $+\pi/2$ pro záporné kmitočty a $-\pi/2$ pro kladné kmitočty:
+
+$$
+H_H(\omega)=-j\,\operatorname{sgn}(\omega)
+=
+\begin{cases}
+j, & \omega<0,\\
+0, & \omega=0,\\
+-j, & \omega>0.
+\end{cases}
+$$
+
+Zdroj výskytu otázky: [[sas_cviceni_v0.96_250225.pdf#page=188|SAS s. 188]], [[sas_cviceni_v0.96_250225.pdf#page=191|SAS s. 191]].
+
+```tikz
+\begin{document}
+  \begin{tikzpicture}[x=0.85cm,y=0.75cm]
+    \draw[->] (-3.4,0) -- (3.6,0) node[right] {$\omega$};
+    \draw[->] (0,-1.4) -- (0,1.6) node[above] {$H_H(\omega)$};
+    \draw[color=gray,dashed] (-3.1,1) -- (3.1,1);
+    \draw[color=gray,dashed] (-3.1,-1) -- (3.1,-1);
+    \draw[color=blue,thick] (-3.1,1) -- (-0.12,1);
+    \draw[color=blue,thick] (0.12,-1) -- (3.1,-1);
+    \node[left] at (0,1) {$j$};
+    \node[left] at (0,-1) {$-j$};
+    \node at (-1.55,1.25) {$\omega<0$};
+    \node at (1.55,-1.25) {$\omega>0$};
+  \end{tikzpicture}
+\end{document}
+```
+
+**Analytický signál** vznikne z reálného signálu $s(t)$ a jeho Hilbertovy transformace:
+
+$$
+s_a(t)=s(t)+j\hat s(t)=s(t)+j\mathcal H\{s(t)\}.
+$$
+
+Jeho spektrum obsahuje jen kladné kmitočty původního reálného signálu. Komplexní obálku pásmového signálu kolem $\omega_c$ získáme posunutím analytického signálu do základního pásma:
+
+$$
+\tilde s(t)=s_a(t)e^{-j\omega_c t}.
+$$
+
+Zpětný převod z komplexní obálky na reálný pásmový signál je
+
+$$
+s(t)=\operatorname{Re}\{\tilde s(t)e^{j\omega_c t}\}.
+$$
+
+Filtrační metoda tedy odpovídá postupu: z reálného pásmového signálu se vytvoří analytický signál odstraněním záporné poloviny spektra a výsledek se vynásobí $e^{-j\omega_c t}$. Zdroj výskytu otázky: [[sas_cviceni_v0.96_250225.pdf#page=188|SAS s. 188-189]].
+
+```tikz
+\begin{document}
+  \begin{tikzpicture}[node distance=1.2cm,>=latex]
+    \node[draw,minimum width=1.2cm] (s) {$s(t)$};
+    \node[draw,right=of s] (analytic) {$s_a(t)=s(t)+j\mathcal H\{s(t)\}$};
+    \node[draw,right=of analytic] (shift) {$\times e^{-j\omega_c t}$};
+    \node[draw,right=of shift] (env) {$\tilde s(t)$};
+    \draw[->] (s) -- (analytic);
+    \draw[->] (analytic) -- (shift);
+    \draw[->] (shift) -- (env);
+    \node[below=0.35cm of analytic] {odstranění záporné poloviny spektra};
+  \end{tikzpicture}
+\end{document}
+```
+
+**Amplitudová modulace se zachovanou nosnou** mění amplitudu nosné podle modulačního signálu:
+
+$$
+s_{AM}(t)=A_c\left[1+m\,s_M(t)\right]\cos(\omega_c t).
+$$
+
+Nosná vlna má amplitudu $A_c$ a úhlovou frekvenci $\omega_c$, $s_M(t)$ je modulační signál a $m$ je činitel modulace. Aby obálka neměnila znaménko, běžně se vyžaduje
+
+$$
+1+m\,s_M(t)\ge 0.
+$$
+
+Ve spektru AM se zachovanou nosnou zůstává čára nosné na $\pm\omega_c$ a vznikají obě postranní pásma posunutá kolem nosné. Pro modulační signál se spektrem $S_M(\omega)$ lze schematicky psát
+
+$$
+S_{AM}(\omega)=\pi A_c\left[\delta(\omega-\omega_c)+\delta(\omega+\omega_c)\right]
++\frac{A_c m}{2}\left[S_M(\omega-\omega_c)+S_M(\omega+\omega_c)\right].
+$$
+
+Zdroj zadání vztahu a požadavku na spektrum: [[sas_cviceni_v0.96_250225.pdf#page=191|SAS s. 191]].
 
 ```tikz
 \begin{document}
@@ -435,6 +526,15 @@ U kauzální soustavy platí $H_F(\Omega)=H_Z(e^{j\Omega})$, pokud oblast konver
 \end{document}
 ```
 
+**Další základní analogové modulace** se liší tím, která vlastnost nosné vlny se mění:
+
+- **DSB-SC**: amplitudová modulace s potlačenou nosnou, typicky $s(t)=A_c s_M(t)\cos(\omega_c t)$; ve spektru jsou postranní pásma bez samostatné čáry nosné.
+- **SSB**: jednopásmová modulace; přenáší jen jedno postranní pásmo, takže šetří šířku pásma.
+- **FM**: frekvenční modulace; okamžitá frekvence nosné závisí na modulačním signálu.
+- **PM**: fázová modulace; okamžitá fáze nosné závisí na modulačním signálu.
+
+Tyto typy jsou uvedeny jako základní orientační přehled k části „typy základních analogových modulací“ ve znění okruhu [[SZZ - Odborné okruhy|odborný okruh 20]].
+
 ## Kontrolní shrnutí
 
 - Obecná soustava je mapování vstupu na výstup.
@@ -444,3 +544,6 @@ U kauzální soustavy platí $H_F(\Omega)=H_Z(e^{j\Omega})$, pokud oblast konver
 - BIBO stabilita LTI odpovídá absolutně integrovatelné nebo sčitatelné impulsové odezvě.
 - V transformační oblasti se konvoluce mění na násobení.
 - Spojitá stabilita podle pólů: levá polorovina; diskrétní stabilita podle pólů: uvnitř jednotkové kružnice.
+- Pásmový signál lze popsat komplexní obálkou $\tilde s(t)$: $s(t)=\operatorname{Re}\{\tilde s(t)e^{j\omega_c t}\}$.
+- Hilbertův transformátor má charakteristiku $H_H(\omega)=-j\,\operatorname{sgn}(\omega)$.
+- AM se zachovanou nosnou má tvar $s_{AM}(t)=A_c[1+m s_M(t)]\cos(\omega_c t)$ a ve spektru zachovává nosnou i obě postranní pásma.

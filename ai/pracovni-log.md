@@ -165,3 +165,11 @@ Přidán `README.md` s rychlým návodem pro ostatní: instalace `pdf-mcp[semant
 - Použité podklady: handouty `b2b31czs_pr1`, `pr2_correlation`, `pr3_DFT`, `pr4_spectrum`, `pr6_filters_II`, `pr8_FIR`, `pr9_FiltFrek`, `pr10_OLA_general`, `pr11_multirate` a `pr12_multirate_apps_recurrent`.
 - Dodrženo: jen otázky podle okruhů, zdroje přes wikilinky na PDF, Obsidian LaTeX, český text s diakritikou a TikZ schémata pro klíčové postupy.
 - U lineární predikce ponechán omezený rozsah podle dodaných podkladů: handout explicitně uvádí ACF jako vstup pro LPC analýzu, ale nerozvádí detailní LPC/AR rovnice.
+
+
+## 2026-06-07 - Oprava SAS okruhu 20
+
+- Upraveno [[SAS/20 Soustavy LTI konvoluce stabilita pasmove signaly modulace]].
+- Nahrazeny TODO části v závěrečné sekci k pásmovým signálům, Hilbertově transformaci, komplexní obálce a analogovým modulacím.
+- Doplněny vztahy pro pásmový signál a komplexní obálku, Hilbertův transformátor, analytický signál, AM se zachovanou nosnou a orientační přehled DSB-SC, SSB, FM a PM.
+- Ponechána poznámka, že dodané SAS PDF tyto části zachycuje hlavně jako teoretické otázky, nikoli jako souvislý výklad.
