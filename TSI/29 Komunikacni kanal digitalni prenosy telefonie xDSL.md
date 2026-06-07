@@ -34,13 +34,13 @@ $$
 
 kde $C$ je mez kapacity kanálu v $\mathrm{bit/s}$, $B$ je šířka pásma a $S/N$ je poměr výkonu užitečného signálu k šumu. Z praktického hlediska tedy nestačí zvětšovat jen modulační rychlost; kapacita je současně omezena použitelným pásmem a odstupem signálu od šumu. [[01.přednáška (B2B32TSI)_print.pdf#page=5|TSI 1 s. 5]]
 
-Kvalita přenosu hovoru se často hodnotí parametrem MOS nebo R-faktorem E-modelu. E-model shrnuje vliv šumu, lineárního zkreslení, zpoždění, kodeků a očekávání uživatele:
+~~Kvalita přenosu hovoru se často hodnotí parametrem MOS nebo R-faktorem E-modelu. E-model shrnuje vliv šumu, lineárního zkreslení, zpoždění, kodeků a očekávání uživatele:~~
 
-$$
-R = R_0 - I_s - I_d - I_e + A
-$$
+~~$$~~
+~~R = R_0 - I_s - I_d - I_e + A~~
+~~$$~~
 
-Používá se hlavně tam, kde je třeba odhadnout subjektivně vnímanou kvalitu hovoru z technických parametrů sítě. [[01.přednáška (B2B32TSI)_print.pdf#page=16|TSI 1 s. 16]], [[01.přednáška (B2B32TSI)_print.pdf#page=19|TSI 1 s. 19]]
+~~Používá se hlavně tam, kde je třeba odhadnout subjektivně vnímanou kvalitu hovoru z technických parametrů sítě. [[01.přednáška (B2B32TSI)_print.pdf#page=16|TSI 1 s. 16]], [[01.přednáška (B2B32TSI)_print.pdf#page=19|TSI 1 s. 19]]~~
 
 ## Telefonní kanál a digitalizace hlasu
 

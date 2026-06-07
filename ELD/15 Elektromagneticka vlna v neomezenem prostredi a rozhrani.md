@@ -1,246 +1,195 @@
 # 15 Elektromagnetická vlna v neomezeném prostředí a na rozhraní
 
-> Hlavní podklad: [[Elektromagnetická vlna_13_5_2021.pdf]]. Kontrola rozsahu: [[hex_compost.pdf#page=152|HEX s. 152]].
+> Hlavní podklad: [[Elektromagnetická vlna_13_5_2021.pdf]]. Znění okruhu: [[SZZ - Odborné okruhy|odborný okruh 15]].
 
-## Maxwellovy rovnice a vlnová rovnice
+## Elektromagnetická vlna v neomezeném prostředí
 
-V nestacionárním elektromagnetickém poli existuje elektrická a magnetická složka současně a nelze je od sebe oddělit. Vztah mezi nimi vyjadřují Maxwellovy rovnice. ELD začíná dvojicí rotačních rovnic:
+Elektromagnetická vlna je časově proměnné elektrické a magnetické pole, které se šíří prostorem. V neomezeném homogenním prostředí nejsou přítomna rozhraní ani vodivé stěny, takže tvar vlny určuje hlavně zdroj a parametry prostředí $\varepsilon$, $\mu$, $\sigma$.
 
-$$
-\operatorname{rot}\mathbf H
-= \mathbf J + \frac{\partial \mathbf D}{\partial t},
-$$
+V harmonickém popisu se časová závislost převádí do fázorů a šíření se vyjadřuje komplexním vlnovým číslem
 
 $$
-\operatorname{rot}\mathbf E
-= -\frac{\partial \mathbf B}{\partial t}.
+\hat k=\beta-j\alpha,
 $$
 
-V lineárním izotropním prostředí platí materiálové vztahy
+kde $\beta$ je fázová konstanta a $\alpha$ měrný útlum. V bezeztrátovém prostředí je $\alpha=0$; v dobře vodivém prostředí amplituda rychle klesá a zavádí se hloubka vniku
 
 $$
-\mathbf D = \varepsilon_0\varepsilon_r\mathbf E,
-\qquad
-\mathbf B = \mu_0\mu_r\mathbf H,
-\qquad
-\mathbf J = \sigma \mathbf E.
-$$
-
-Po dosazení materiálových vztahů a vhodném vyloučení jedné veličiny se získá vlnová rovnice. Pro intenzitu elektrického pole má mimo oblast zdrojů tvar, který lze chápat jako základní matematický popis elektromagnetické vlny:
-
-$$
-\nabla^2 \mathbf E
-- \mu\sigma \frac{\partial \mathbf E}{\partial t}
-- \mu\varepsilon \frac{\partial^2 \mathbf E}{\partial t^2}
-= 0.
-$$
-
-Pro harmonické časové průběhy se používají fázory. Časové derivace se nahrazují násobením $j\omega$ a vlnová rovnice přechází na Helmholtzovu rovnici.
-
-**Zdroj:** [[Elektromagnetická vlna_13_5_2021.pdf#page=5|ELD s. 5]], [[Elektromagnetická vlna_13_5_2021.pdf#page=6|ELD s. 6]], [[Elektromagnetická vlna_13_5_2021.pdf#page=7|ELD s. 7]].
-
-## Rovinná harmonická vlna
-
-Rovinná harmonická elektromagnetická vlna je řešení, ve kterém jsou vlnoplochy roviny a pole závisí jen na jedné prostorové souřadnici ve směru šíření. Pro volbu
-
-$$
-\mathbf E = \mathbf x_0 E_x(z)
-$$
-
-se u postupné vlny ve směru $+z$ používá fázor
-
-$$
-\hat E_x(z) = \hat E_0 e^{-j\hat k z},
-$$
-
-kde komplexní konstanta šíření je
-
-$$
-\hat k = \beta - j\alpha.
-$$
-
-Okamžitá hodnota intenzity elektrického pole je
-
-$$
-E_x(z,t)
-= E_m e^{-\alpha z}\sin(\omega t-\beta z+\varphi_0).
-$$
-
-Význam parametrů:
-
-- $\alpha$ je měrný útlum; určuje exponenciální pokles amplitudy ve směru šíření.
-- $\beta$ je fázová konstanta; určuje fázové zpoždění na jednotku délky.
-- $\varphi_0$ je referenční fáze na zvolené rovině.
-
-Z Faradayovy rovnice plyne, že v rovinné vlně jsou $\mathbf E$, $\mathbf H$ a směr šíření navzájem kolmé. Vlnová impedance je
-
-$$
-\hat Z = \frac{\hat E_x}{\hat H_y}.
-$$
-
-Její absolutní hodnota udává poměr amplitud elektrického a magnetického pole; argument udává jejich fázový posun.
-
-**Zdroj:** [[Elektromagnetická vlna_13_5_2021.pdf#page=9|ELD s. 9]], [[Elektromagnetická vlna_13_5_2021.pdf#page=10|ELD s. 10]], [[Elektromagnetická vlna_13_5_2021.pdf#page=11|ELD s. 11]], [[Elektromagnetická vlna_13_5_2021.pdf#page=12|ELD s. 12]], [[Elektromagnetická vlna_13_5_2021.pdf#page=13|ELD s. 13]].
-
-## Vlnová délka, fázová a skupinová rychlost
-
-Vlnová délka je nejmenší vzdálenost dvou míst, ve kterých jsou veličiny elektromagnetického pole ve fázi. Platí
-
-$$
-\lambda = \frac{2\pi}{\beta}.
-$$
-
-Fázová rychlost je rychlost pohybu vlnoplochy konstantní fáze:
-
-$$
-v_f = \frac{\omega}{\beta}.
-$$
-
-V obecném disperzním prostředí se energie nepřenáší nutně fázovou rychlostí, ale skupinovou rychlostí:
-
-$$
-v_s = \frac{d\omega}{d\beta}.
-$$
-
-V bezeztrátovém prostředí jsou podle ELD fázová i skupinová rychlost stejné.
-
-**Zdroj:** [[Elektromagnetická vlna_13_5_2021.pdf#page=14|ELD s. 14]], [[Elektromagnetická vlna_13_5_2021.pdf#page=15|ELD s. 15]].
-
-## Vliv prostředí, hloubka vniku a výkon
-
-Vlastnosti vlny závisí na parametrech prostředí $\varepsilon$, $\mu$, $\sigma$. ELD rozlišuje elektricky nevodivé a dobře vodivé prostředí podle vztahu vodivostního členu $\sigma$ a posuvného členu $\omega\varepsilon$.
-
-V dobrém vodiči se vlna výrazně tlumí. Hloubka vniku $\delta$ je vzdálenost, na které amplituda poklesne na $1/e$ původní hodnoty:
-
-$$
-\delta = \frac{1}{\alpha}.
+\delta=\frac{1}{\alpha}.
 $$
 
 Přenášený výkon popisuje Poyntingův vektor
 
 $$
-\mathbf S = \mathbf E \times \mathbf H.
-$$
-
-Pro rovinnou vlnu se výkon šíří ve směru šíření vlny. Střední hodnota Poyntingova vektoru se pro fázory zapisuje
-
-$$
+\mathbf S=\mathbf E\times\mathbf H,
+\qquad
 \mathbf S_\mathrm{stř}
-= \frac{1}{2}\operatorname{Re}(\hat{\mathbf E}\times \hat{\mathbf H}^{*}).
+=\frac12\operatorname{Re}(\hat{\mathbf E}\times\hat{\mathbf H}^{*}).
 $$
 
-**Zdroj:** [[Elektromagnetická vlna_13_5_2021.pdf#page=16|ELD s. 16]], [[Elektromagnetická vlna_13_5_2021.pdf#page=17|ELD s. 17]], [[Elektromagnetická vlna_13_5_2021.pdf#page=19|ELD s. 19]], [[Elektromagnetická vlna_13_5_2021.pdf#page=25|ELD s. 25]].
+**Zdroj:** [[Elektromagnetická vlna_13_5_2021.pdf#page=9|ELD s. 9]], [[Elektromagnetická vlna_13_5_2021.pdf#page=16|ELD s. 16]], [[Elektromagnetická vlna_13_5_2021.pdf#page=19|ELD s. 19]], [[Elektromagnetická vlna_13_5_2021.pdf#page=25|ELD s. 25]].
 
-## Rovinná, sférická, válcová vlna a Gaussův svazek
+## Maxwellovy rovnice
 
-ELD podrobně odvozuje rovinnou harmonickou vlnu. V úvodu zároveň vysvětluje, že vlna od bodového zdroje má v blízkosti zdroje sférické vlnoplochy a v dostatečné vzdálenosti se části těchto vlnoploch podobají rovinám. To je fyzikální důvod, proč se vzdálené pole často aproximuje rovinnou vlnou.
+Nestacionární elektrické a magnetické pole nelze oddělit: časová změna jedné složky budí druhou. ELD začíná rotačními Maxwellovými rovnicemi
 
-> [!todo] DOPLNIT Z JINÉHO PODKLADU ELD  
-> V dodaném ELD PDF jsem nenašel samostatný výklad válcové vlny ani Gaussova svazku. `hex_compost.pdf` tyto pojmy v otázce očekává kontrolně, ale faktické definice zde nejsou ověřitelné proti předmětovému PDF.
+$$
+\operatorname{rot}\mathbf H
+=\mathbf J+\frac{\partial\mathbf D}{\partial t},
+$$
 
-**Zdroj:** [[Elektromagnetická vlna_13_5_2021.pdf#page=2|ELD s. 2]], [[Elektromagnetická vlna_13_5_2021.pdf#page=3|ELD s. 3]], [[Elektromagnetická vlna_13_5_2021.pdf#page=4|ELD s. 4]], [[Elektromagnetická vlna_13_5_2021.pdf#page=9|ELD s. 9]], kontrolně [[hex_compost.pdf#page=152|HEX s. 152]].
+$$
+\operatorname{rot}\mathbf E
+=-\frac{\partial\mathbf B}{\partial t}.
+$$
 
-## Polarizace vlny
+V lineárním izotropním prostředí platí
 
-Polarizace elektromagnetické vlny popisuje orientaci vektorů elektromagnetického pole v prostoru, obvykle podle intenzity elektrického pole. Pokud koncový bod vektoru $\mathbf E$ kmitá po přímce, jde o lineární polarizaci. Pokud vznikne kružnice nebo elipsa, jde o kruhovou nebo eliptickou polarizaci.
+$$
+\mathbf D=\varepsilon\mathbf E,\qquad
+\mathbf B=\mu\mathbf H,\qquad
+\mathbf J=\sigma\mathbf E.
+$$
 
-Obecnou polarizaci lze chápat jako superpozici dvou lineárně polarizovaných vln, které jsou prostorově natočené o $90^\circ$ a mají určitý vzájemný fázový posun:
+Po dosazení materiálových vztahů a vyloučení jedné složky pole vznikne vlnová rovnice. Pro elektrickou intenzitu mimo zdroje má tvar
 
-- stejné fáze dávají lineární polarizaci,
-- stejné amplitudy a fázový posun $90^\circ$ dávají kruhovou polarizaci,
-- různé amplitudy a fázový posun $90^\circ$ dávají eliptickou polarizaci.
+$$
+\nabla^2\mathbf E
+-\mu\sigma\frac{\partial\mathbf E}{\partial t}
+-\mu\varepsilon\frac{\partial^2\mathbf E}{\partial t^2}=0.
+$$
 
-Při rozhraní se jako referenční rovina bere rovina dopadu. Rozlišuje se:
+Pro harmonické průběhy přechází na Helmholtzovu rovnici.
 
-- **rovnoběžná polarizace**: $\mathbf E$ je rovnoběžná s rovinou dopadu,
-- **kolmá polarizace**: $\mathbf E$ je kolmá na rovinu dopadu.
+**Zdroj:** [[Elektromagnetická vlna_13_5_2021.pdf#page=5|ELD s. 5]], [[Elektromagnetická vlna_13_5_2021.pdf#page=6|ELD s. 6]], [[Elektromagnetická vlna_13_5_2021.pdf#page=7|ELD s. 7]].
 
-**Zdroj:** [[Elektromagnetická vlna_13_5_2021.pdf#page=26|ELD s. 26]], [[Elektromagnetická vlna_13_5_2021.pdf#page=27|ELD s. 27]], [[Elektromagnetická vlna_13_5_2021.pdf#page=38|ELD s. 38]].
+## Vlna rovinná, kulová a válcová
+
+Rovinná vlna má rovinné vlnoplochy. Pole závisí jen na souřadnici ve směru šíření; pro šíření ve směru $+z$ lze psát
+
+$$
+\hat E_x(z)=\hat E_0e^{-j\hat k z},
+$$
+
+$$
+E_x(z,t)=E_m e^{-\alpha z}\sin(\omega t-\beta z+\varphi_0).
+$$
+
+V rovinné vlně jsou $\mathbf E$, $\mathbf H$ a směr šíření navzájem kolmé. Vlnová impedance je
+
+$$
+\hat Z=\frac{\hat E_x}{\hat H_y}.
+$$
+
+Vlnová délka a fázová rychlost jsou
+
+$$
+\lambda=\frac{2\pi}{\beta},
+\qquad
+v_f=\frac{\omega}{\beta}.
+$$
+
+Kulová vlna má vlnoplochy ve tvaru koulí. Vzniká typicky od bodového zdroje; ve velké vzdálenosti se malý výřez kulové vlnoplochy dá aproximovat rovinnou vlnou. Amplituda ideální kulové vlny klesá přibližně jako $1/r$.
+
+Válcová vlna má vlnoplochy ve tvaru válců, například u dlouhého čárového zdroje. Ve vzdáleném poli ideální válcové vlny klesá amplituda přibližně jako $1/\sqrt{\rho}$.
+
+**Zdroj:** [[Elektromagnetická vlna_13_5_2021.pdf#page=2|ELD s. 2]], [[Elektromagnetická vlna_13_5_2021.pdf#page=3|ELD s. 3]], [[Elektromagnetická vlna_13_5_2021.pdf#page=9|ELD s. 9]], [[Elektromagnetická vlna_13_5_2021.pdf#page=14|ELD s. 14]], doplněk k zadání podle [[hex_compost.pdf#page=157|HEX s. 157]].
+
+## Gaussův svazek
+
+Gaussův svazek je směrový svazek s přibližně Gaussovým příčným rozložením amplitudy nebo intenzity. Používá se jako aproximace laserového svazku. Má osu šíření, nejužší místo svazku o poloměru $w_0$ a Rayleighovu vzdálenost
+
+$$
+z_R=\frac{\pi w_0^2}{\lambda}.
+$$
+
+Blízko pasu svazku se chová podobně jako rovinná vlna, s rostoucí vzdáleností se začne rozbíhat a jeho vlnoplochy se více podobají kulovým. Rozbíhavost pro velké vzdálenosti souvisí s poměrem $\lambda/w_0$: čím menší je pas svazku, tím větší je difrakční rozbíhavost.
+
+**Zdroj:** doplněk k zadání podle [[hex_compost.pdf#page=158|HEX s. 158]], [[hex_compost.pdf#page=159|HEX s. 159]]. V dodaném ELD PDF není Gaussův svazek samostatně vyložen.
 
 ## Vlna na rozhraní dvou prostředí
 
-Při dopadu rovinné harmonické vlny na rozhraní dvou prostředí vzniká obecně dopadající, odražená a prostupující vlna. Rovina rozhraní odděluje prostředí 1 a 2. Rovina dopadu obsahuje vlnové vektory dopadající, odražené a prostupující vlny.
+Při dopadu rovinné vlny na rozhraní dvou prostředí vzniká dopadající, odražená a prostupující vlna. Rovina dopadu obsahuje vlnové vektory dopadající a odražené vlny a normálu k rozhraní.
 
-Na rozhraní musí být splněny okrajové podmínky pro tečné složky polí:
+Na rozhraní musí být splněna spojitost tečných složek polí
 
 $$
-\hat E_{1t} = \hat E_{2t},
+\hat E_{1t}=\hat E_{2t},
 \qquad
-\hat H_{1t} = \hat H_{2t}.
+\hat H_{1t}=\hat H_{2t}.
 $$
 
-Z podmínek na rozhraní vyplývají Snellovy zákony. Úhel odrazu se rovná úhlu dopadu:
+Z okrajových podmínek plyne zákon odrazu a Snellův zákon. Při kolmém dopadu je činitel odrazu
 
 $$
-\vartheta_r = \vartheta_i.
+\hat R=\frac{\hat Z_2-\hat Z_1}{\hat Z_2+\hat Z_1},
 $$
 
-Pro úhel prostupu platí vztah mezi konstantami šíření v obou prostředích; v dielektrikách se dá interpretovat jako lom ke kolmici nebo od kolmice podle poměru permitivit.
-
-Při kolmém dopadu nezáleží na polarizaci. Činitel odrazu a prostupu jsou
+a činitel prostupu
 
 $$
-\hat R = \frac{\hat Z_2-\hat Z_1}{\hat Z_2+\hat Z_1},
+\hat T=\frac{2\hat Z_2}{\hat Z_2+\hat Z_1}.
 $$
 
-$$
-\hat T = \frac{2\hat Z_2}{\hat Z_2+\hat Z_1}.
-$$
+Při šikmém dopadu záleží na polarizaci vůči rovině dopadu. Rozlišuje se kolmá polarizace, kde $\mathbf E$ je kolmá na rovinu dopadu, a rovnoběžná polarizace, kde $\mathbf E$ leží v rovině dopadu.
 
-Absolutní hodnota činitele odrazu udává poměr amplitudy odražené a dopadající vlny, argument udává fázový posun.
+**Zdroj:** [[Elektromagnetická vlna_13_5_2021.pdf#page=37|ELD s. 37]], [[Elektromagnetická vlna_13_5_2021.pdf#page=38|ELD s. 38]], [[Elektromagnetická vlna_13_5_2021.pdf#page=45|ELD s. 45]], [[Elektromagnetická vlna_13_5_2021.pdf#page=46|ELD s. 46]].
 
-**Zdroj:** [[Elektromagnetická vlna_13_5_2021.pdf#page=37|ELD s. 37]], [[Elektromagnetická vlna_13_5_2021.pdf#page=38|ELD s. 38]], [[Elektromagnetická vlna_13_5_2021.pdf#page=40|ELD s. 40]], [[Elektromagnetická vlna_13_5_2021.pdf#page=45|ELD s. 45]], [[Elektromagnetická vlna_13_5_2021.pdf#page=46|ELD s. 46]].
+## Totální odraz
 
-## Totální odraz a evanescentní vlna
-
-Při přechodu z elektricky hustšího prostředí do řidšího prostředí se vlna láme od kolmice. Kritický úhel nastane tehdy, když úhel prostupu dosáhne $\pi/2$. V ELD je pro dielektrika uveden vztah
+Totální odraz nastává při přechodu z opticky hustšího prostředí do řidšího, pokud je úhel dopadu větší než kritický. Pro nemagnetická dielektrika ELD uvádí
 
 $$
 \vartheta_{i,\mathrm{kr}}
-= \arcsin\sqrt{\frac{\varepsilon_{r2}}{\varepsilon_{r1}}},
-\qquad \varepsilon_{r2}<\varepsilon_{r1}.
+=\arcsin\sqrt{\frac{\varepsilon_{r2}}{\varepsilon_{r1}}},
+\qquad
+\varepsilon_{r2}<\varepsilon_{r1}.
 $$
 
-Pro větší úhly dopadu nastává totální odraz. Absolutní hodnota činitele odrazu je rovna jedné bez ohledu na polarizaci:
+Pro větší úhly je velikost činitele odrazu rovna jedné:
 
 $$
-|\hat R_\parallel| = |\hat R_\perp| = 1.
+|\hat R_\parallel|=|\hat R_\perp|=1.
 $$
 
-Přesto pod rozhraním vzniká speciální vlna. ELD ji popisuje jako evanescentní vlnu. Její fázor má tvar
+To neznamená, že v druhém prostředí není žádné pole; vniká do něj evanescentní pole, které nepřenáší výkon kolmo hluboko do prostředí.
+
+**Zdroj:** [[Elektromagnetická vlna_13_5_2021.pdf#page=63|ELD s. 63]], [[Elektromagnetická vlna_13_5_2021.pdf#page=64|ELD s. 64]], [[Elektromagnetická vlna_13_5_2021.pdf#page=65|ELD s. 65]].
+
+## Evanescentní vlna
+
+Evanescentní vlna se šíří podél rozhraní, ale kolmo od rozhraní exponenciálně zaniká. U totálního odrazu má prostupující pole tvar
 
 $$
 \hat E_t(x,y,z)
-= \hat E_{t0} e^{-jk_2 p x}e^{-k_2 q z}.
+=\hat E_{t0}e^{-jk_2px}e^{-k_2qz}.
 $$
 
-První exponenciální člen popisuje šíření podél rozhraní, druhý exponenciální člen popisuje pokles amplitudy ve směru kolmo od rozhraní. Vlna tedy postupuje podél rozhraní, ale směrem do druhého prostředí zaniká.
+Člen $e^{-jk_2px}$ popisuje postup podél rozhraní, člen $e^{-k_2qz}$ útlum ve směru kolmo od rozhraní. Evanescentní vlna je důležitá právě proto, že i při totálním odrazu musí pole splnit okrajové podmínky na rozhraní.
 
-**Zdroj:** [[Elektromagnetická vlna_13_5_2021.pdf#page=63|ELD s. 63]], [[Elektromagnetická vlna_13_5_2021.pdf#page=64|ELD s. 64]], [[Elektromagnetická vlna_13_5_2021.pdf#page=65|ELD s. 65]], [[Elektromagnetická vlna_13_5_2021.pdf#page=66|ELD s. 66]], [[Elektromagnetická vlna_13_5_2021.pdf#page=67|ELD s. 67]].
+**Zdroj:** [[Elektromagnetická vlna_13_5_2021.pdf#page=66|ELD s. 66]], [[Elektromagnetická vlna_13_5_2021.pdf#page=67|ELD s. 67]].
 
-## Polarizace odrazem a Brewsterův úhel
+## Polarizace vlny odrazem
 
-Polarizace odrazem nastává tehdy, když pro jednu polarizační složku vymizí odraz. U rozhraní dvou dielektrik ELD ukazuje, že pro rovnoběžně polarizovanou složku existuje polarizační, neboli Brewsterův úhel. Pokud na rozhraní dopadá obecně polarizovaná vlna, lze ji rozložit na kolmou a rovnoběžnou složku. Při Brewsterově úhlu se rovnoběžná složka neodrazí, a odražená vlna je proto polarizovaná.
+Polarizace popisuje směr kmitání elektrické intenzity. Obecnou vlnu lze rozložit na dvě složky vůči rovině dopadu: kolmou a rovnoběžnou.
 
-ELD uvádí pro nemagnetická dielektrika vztah
+Polarizace odrazem nastane, když se jedna polarizační složka odráží jinak než druhá. U rozhraní dvou dielektrik může pro rovnoběžnou polarizaci existovat Brewsterův úhel, při kterém se rovnoběžná složka neodrazí. ELD pro nemagnetická dielektrika uvádí
 
 $$
 \vartheta_{i,\mathrm{BR}}
-= \arcsin
+=\arcsin
 \frac{1}{\sqrt{1+\frac{\varepsilon_{r1}}{\varepsilon_{r2}}}}.
 $$
 
-Prakticky důležitý je závěr: odraz pro rovnoběžnou polarizaci může být nulový, zatímco činitel prostupu je obecně nenulový pro obě polarizační složky.
+Pokud na rozhraní dopadá nepolarizovaná nebo obecně polarizovaná vlna, odražená vlna je při Brewsterově úhlu polarizovaná převážně kolmo k rovině dopadu.
 
-**Zdroj:** [[Elektromagnetická vlna_13_5_2021.pdf#page=76|ELD s. 76]], [[Elektromagnetická vlna_13_5_2021.pdf#page=77|ELD s. 77]].
+**Zdroj:** [[Elektromagnetická vlna_13_5_2021.pdf#page=26|ELD s. 26]], [[Elektromagnetická vlna_13_5_2021.pdf#page=38|ELD s. 38]], [[Elektromagnetická vlna_13_5_2021.pdf#page=76|ELD s. 76]], [[Elektromagnetická vlna_13_5_2021.pdf#page=77|ELD s. 77]].
 
 ## Co umět u zkoušky
 
-- Zapsat rotační Maxwellovy rovnice a vysvětlit vazbu časově proměnného elektrického a magnetického pole.
-- Popsat rovinnou harmonickou vlnu pomocí $\alpha$, $\beta$, $\lambda$, $v_f$, $v_s$ a vlnové impedance.
-- Vysvětlit význam Poyntingova vektoru.
-- Rozlišit lineární, kruhovou a eliptickou polarizaci.
-- Popsat geometrii dopadu na rozhraní, kolmou a rovnoběžnou polarizaci.
-- Zapsat činitel odrazu a prostupu pro kolmý dopad.
-- Vysvětlit kritický úhel, totální odraz a evanescentní vlnu.
-- Vysvětlit polarizaci odrazem a význam Brewsterova úhlu.
+- Zapsat rotační Maxwellovy rovnice a materiálové vztahy.
+- Vysvětlit rovinnou vlnu, $\alpha$, $\beta$, $\lambda$, $v_f$, vlnovou impedanci a Poyntingův vektor.
+- Rozlišit rovinnou, kulovou a válcovou vlnu.
+- Stručně popsat Gaussův svazek jako model laserového svazku.
+- Popsat dopad na rozhraní, okrajové podmínky, odraz a prostup.
+- Vysvětlit kritický úhel, totální odraz, evanescentní vlnu a polarizaci odrazem.
