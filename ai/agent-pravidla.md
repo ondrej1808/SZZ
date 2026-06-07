@@ -13,11 +13,11 @@
 - Pokud informace v podkladech není nalezena, explicitně to označit.
 
 ## Aktuální práce
-- Poslední dokončená oblast: odborné okruhy, `TSI` otázky 29-30.
+- Poslední dokončená oblast: odborné okruhy, `CZS` otázky 23-24.
 - Vytvořené poznámky:
-  - [[TSI/29 Komunikacni kanal digitalni prenosy telefonie xDSL]]
-  - [[TSI/30 Bunkove mobilni site GSM GPRS EDGE UMTS]]
-- Použité podklady: přednáškové PDF ve složce `TSI`.
-- Předchozí dokončená práce před TSI: `SAS` otázky 19-20 a přehled [[SAS/19a Srovnani spektralnich reprezentaci signalu]].
+  - [[CZS/23 Konvoluce DFT vahovani casove frekvencni analyza filtry kvantovani]]
+  - [[CZS/24 Filtrace ve frekvencni oblasti prevzorkovani banky filtru odhady analyza predikce]]
+- Použité podklady: přednáškové PDF ve složce `CZS`.
+- Předchozí dokončená práce před CZS: `TSI` otázky 29-30.
 
 - V běžném českém textu vždy používat správnou gramatiku včetně háčků a čárek. Bez diakritiky psát jen tam, kde to vyžaduje technický identifikátor, název souboru, příkaz, kód nebo doslovný zápis z podkladů.

@@ -155,3 +155,13 @@ Přidán `README.md` s rychlým návodem pro ostatní: instalace `pdf-mcp[semant
 - Otázka 29 čerpá hlavně z informační propustnosti a E-modelu, telefonního kanálu, PCM 30/32, PDH/SDH/OTH, digitálních spojovacích systémů, VoIP signalizace a xDSL.
 - Otázka 30 čerpá hlavně z buňkového principu, metod FDMA/TDMA/CDMA, handoveru, architektury GSM, datových služeb CSD/HSCSD/GPRS/EDGE a UMTS.
 - TikZ grafy nebyly přidány; u těchto dvou otázek byly přednáškové diagramy nahrazeny stručným textovým popisem struktur a procesů.
+
+
+## 2026-06-07 - CZS otázky 23-24
+
+- Zpracovány odborné otázky 23 a 24 do složky `CZS`:
+  - [[CZS/23 Konvoluce DFT vahovani casove frekvencni analyza filtry kvantovani]]
+  - [[CZS/24 Filtrace ve frekvencni oblasti prevzorkovani banky filtru odhady analyza predikce]]
+- Použité podklady: handouty `b2b31czs_pr1`, `pr2_correlation`, `pr3_DFT`, `pr4_spectrum`, `pr6_filters_II`, `pr8_FIR`, `pr9_FiltFrek`, `pr10_OLA_general`, `pr11_multirate` a `pr12_multirate_apps_recurrent`.
+- Dodrženo: jen otázky podle okruhů, zdroje přes wikilinky na PDF, Obsidian LaTeX, český text s diakritikou a TikZ schémata pro klíčové postupy.
+- U lineární predikce ponechán omezený rozsah podle dodaných podkladů: handout explicitně uvádí ACF jako vstup pro LPC analýzu, ale nerozvádí detailní LPC/AR rovnice.
