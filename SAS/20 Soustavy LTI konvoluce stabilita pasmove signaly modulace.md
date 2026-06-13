@@ -59,7 +59,7 @@ respektive diskrétně $x[k]=0\ \forall k<k_0\Rightarrow y[k]=0\ \forall k<k_0$.
 \end{document}
 ```
 
-**Soustava bez paměti** závisí jen na aktuální hodnotě vstupu. **Soustava s pamětí** používá i minulé nebo budoucí hodnoty vstupu. Zdroj: [[sas_cviceni_v0.96_250225.pdf#page=100|SAS s. 100]].
+**Soustava bez paměti** závisí jen na aktuální hodnotě vstupu. **Soustava s pamětí** používá i minulé hodnoty vstupu. Zdroj: [[sas_cviceni_v0.96_250225.pdf#page=100|SAS s. 100]].
 
 ```tikz
 \begin{document}
@@ -513,6 +513,8 @@ $$
 
 Zdroj zadání vztahu a požadavku na spektrum: [[sas_cviceni_v0.96_250225.pdf#page=191|SAS s. 191]].
 
+Časový a spektrální náčrt AM:
+
 ```tikz
 \begin{document}
   \begin{tikzpicture}[x=0.75cm,y=0.75cm]
@@ -526,14 +528,101 @@ Zdroj zadání vztahu a požadavku na spektrum: [[sas_cviceni_v0.96_250225.pdf#p
 \end{document}
 ```
 
+```tikz
+\begin{document}
+  \begin{tikzpicture}[x=0.85cm,y=0.75cm]
+    \draw[->] (-4.4,0) -- (4.6,0) node[right] {$\omega$};
+    \draw[->] (0,-0.2) -- (0,1.9) node[above] {$|S_{AM}|$};
+    \draw[color=blue,thick] (-3.5,0) -- (-3.0,0.65) -- (-2.5,0);
+    \draw[color=blue,thick] (-1.9,0) -- (-1.4,0.65) -- (-0.9,0);
+    \draw[color=blue,thick] (0.9,0) -- (1.4,0.65) -- (1.9,0);
+    \draw[color=blue,thick] (2.5,0) -- (3.0,0.65) -- (3.5,0);
+    \draw[color=red,very thick,->] (-2.2,0) -- (-2.2,1.55);
+    \draw[color=red,very thick,->] (2.2,0) -- (2.2,1.55);
+    \node at (-2.2,-0.3) {$-\omega_c$};
+    \node at (2.2,-0.3) {$\omega_c$};
+    \node[color=red] at (0,1.6) {nosná};
+    \node[color=blue] at (0,0.85) {postranní pásma};
+  \end{tikzpicture}
+\end{document}
+```
+
 **Další základní analogové modulace** se liší tím, která vlastnost nosné vlny se mění:
 
 - **DSB-SC**: amplitudová modulace s potlačenou nosnou, typicky $s(t)=A_c s_M(t)\cos(\omega_c t)$; ve spektru jsou postranní pásma bez samostatné čáry nosné.
 - **SSB**: jednopásmová modulace; přenáší jen jedno postranní pásmo, takže šetří šířku pásma.
-- **FM**: frekvenční modulace; okamžitá frekvence nosné závisí na modulačním signálu.
 - **PM**: fázová modulace; okamžitá fáze nosné závisí na modulačním signálu.
+- **FM**: frekvenční modulace; okamžitá frekvence nosné závisí na modulačním signálu.
 
 Tyto typy jsou uvedeny jako základní orientační přehled k části „typy základních analogových modulací“ ve znění okruhu [[SZZ - Odborné okruhy|odborný okruh 20]].
+
+Pro jednofrekvenční modulační signál $s_M(t)=\cos(\omega_m t)$ lze orientačně psát:
+
+$$
+s_{PM}(t)=A_c\cos\left(\omega_c t+k_p s_M(t)\right),
+\qquad
+s_{FM}(t)=A_c\cos\left(\omega_c t+k_f\int s_M(t)\,\mathrm dt\right).
+$$
+
+U PM i FM je amplituda nosné konstantní. Mění se fáze, respektive okamžitá frekvence. Ve spektru úhlových modulací vzniká nosná a postranní čáry na $\omega_c\pm n\omega_m$; u většího modulačního indexu je postranních složek více.
+
+Časový a spektrální náčrt PM:
+
+```tikz
+\begin{document}
+  \begin{tikzpicture}[x=0.75cm,y=0.75cm]
+    \draw[->] (-0.2,0) -- (8.2,0) node[right] {$t$};
+    \draw[->] (0,-1.5) -- (0,1.7);
+    \draw[color=blue,thick,domain=0:8,samples=350] plot (\x,{sin((7*\x + 0.9*sin(0.9*\x r)) r)});
+    \draw[color=gray,dashed] (0,1.05) -- (8,1.05);
+    \draw[color=gray,dashed] (0,-1.05) -- (8,-1.05);
+    \node[color=blue] at (5.8,1.35) {PM: konstantní amplituda};
+  \end{tikzpicture}
+\end{document}
+```
+
+```tikz
+\begin{document}
+  \begin{tikzpicture}[x=0.8cm,y=0.75cm]
+    \draw[->] (-4.5,0) -- (4.7,0) node[right] {$\omega$};
+    \draw[->] (0,-0.2) -- (0,1.8) node[above] {$|S_{PM}|$};
+    \foreach \x/\h in {-3.4/0.25,-2.8/0.5,-2.2/1.35,-1.6/0.5,-1.0/0.25,1.0/0.25,1.6/0.5,2.2/1.35,2.8/0.5,3.4/0.25}
+      \draw[color=blue,very thick,->] (\x,0) -- (\x,\h);
+    \node at (-2.2,-0.3) {$-\omega_c$};
+    \node at (2.2,-0.3) {$\omega_c$};
+    \node[color=blue] at (0,1.45) {$\omega_c\pm n\omega_m$};
+  \end{tikzpicture}
+\end{document}
+```
+
+Časový a spektrální náčrt FM:
+
+```tikz
+\begin{document}
+  \begin{tikzpicture}[x=0.75cm,y=0.75cm]
+    \draw[->] (-0.2,0) -- (8.2,0) node[right] {$t$};
+    \draw[->] (0,-1.5) -- (0,1.7);
+    \draw[color=blue,thick,domain=0:8,samples=450] plot (\x,{sin((7*\x - 1.2*cos(0.9*\x r)) r)});
+    \draw[color=gray,dashed] (0,1.05) -- (8,1.05);
+    \draw[color=gray,dashed] (0,-1.05) -- (8,-1.05);
+    \node[color=blue] at (5.8,1.35) {FM: mění se hustota kmitů};
+  \end{tikzpicture}
+\end{document}
+```
+
+```tikz
+\begin{document}
+  \begin{tikzpicture}[x=0.8cm,y=0.75cm]
+    \draw[->] (-4.5,0) -- (4.7,0) node[right] {$\omega$};
+    \draw[->] (0,-0.2) -- (0,1.8) node[above] {$|S_{FM}|$};
+    \foreach \x/\h in {-4.0/0.15,-3.4/0.35,-2.8/0.7,-2.2/1.2,-1.6/0.7,-1.0/0.35,-0.4/0.15,0.4/0.15,1.0/0.35,1.6/0.7,2.2/1.2,2.8/0.7,3.4/0.35,4.0/0.15}
+      \draw[color=blue,very thick,->] (\x,0) -- (\x,\h);
+    \node at (-2.2,-0.3) {$-\omega_c$};
+    \node at (2.2,-0.3) {$\omega_c$};
+    \node[color=blue] at (0,1.45) {více postranních složek};
+  \end{tikzpicture}
+\end{document}
+```
 
 ## Kontrolní shrnutí
 
@@ -547,3 +636,4 @@ Tyto typy jsou uvedeny jako základní orientační přehled k části „typy z
 - Pásmový signál lze popsat komplexní obálkou $\tilde s(t)$: $s(t)=\operatorname{Re}\{\tilde s(t)e^{j\omega_c t}\}$.
 - Hilbertův transformátor má charakteristiku $H_H(\omega)=-j\,\operatorname{sgn}(\omega)$.
 - AM se zachovanou nosnou má tvar $s_{AM}(t)=A_c[1+m s_M(t)]\cos(\omega_c t)$ a ve spektru zachovává nosnou i obě postranní pásma.
+- PM mění okamžitou fázi nosné; FM mění okamžitou frekvenci nosné. Obě mají konstantní amplitudu a u tónové modulace spektrální složky kolem $\omega_c\pm n\omega_m$.

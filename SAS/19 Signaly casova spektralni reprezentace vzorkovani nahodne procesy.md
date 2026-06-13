@@ -251,7 +251,7 @@ Je-li $S(\omega)=0$ pro $|\omega|>\omega_m$, pak vzorkovací podmínka je $\omeg
 
 ## Náhodné procesy
 
-**Náhodný proces** je v SAS chápán jako náhodný signál; důležitou třídou jsou stacionární procesy, jejichž pravděpodobnostní vlastnosti jsou invariantní vůči časovému posunu. Zdroj: [[sas_cviceni_v0.96_250225.pdf#page=163|SAS s. 163]].
+**Náhodný proces** je náhodný signál $X(t)$ nebo $X[k]$. Jedna naměřená časová funkce je jedna realizace procesu. Proces se nepopisuje jednou pevnou funkcí, ale statistickými charakteristikami. Zdroj: [[sas_cviceni_v0.96_250225.pdf#page=163|SAS s. 163]].
 
 ```tikz
 \begin{document}
@@ -265,36 +265,25 @@ Je-li $S(\omega)=0$ pro $|\omega|>\omega_m$, pak vzorkovací podmínka je $\omeg
 \end{document}
 ```
 
-**SSS stacionarita** vyžaduje invarianci hustot pravděpodobnosti vůči posunu času. Z PDF plyne například
+Základní charakteristiky náhodného signálu jsou:
 
 $$
-\forall\tau:\operatorname{pdf}_X(\xi;t)=\operatorname{pdf}_X(\xi;t+\tau),
+\mu_X(t)=E\{X(t)\},
+\qquad
+R_X(t_1,t_2)=E\{X(t_1)X^*(t_2)\}.
 $$
 
-a analogická podmínka pro sdruženou hustotu ve dvou časech. Zdroj: [[sas_cviceni_v0.96_250225.pdf#page=163|SAS s. 163]].
+Střední hodnota $\mu_X$ popisuje průměrnou úroveň signálu. Autokorelace $R_X$ říká, jak spolu souvisejí hodnoty signálu v různých časech. Zdroj: [[sas_cviceni_v0.96_250225.pdf#page=163|SAS s. 163]].
 
-```tikz
-\begin{document}
-  \begin{tikzpicture}[x=0.9cm,y=0.8cm]
-    \draw[->] (-0.2,0) -- (6.2,0) node[right] {$t$};
-    \draw[->] (0,-0.2) -- (0,1.7);
-    \draw[color=blue,thick] (0.5,0.5) -- (1.0,1.1) -- (1.5,0.4) -- (2.0,1.0) -- (2.5,0.6);
-    \draw[color=blue,thick] (3.2,0.5) -- (3.7,1.1) -- (4.2,0.4) -- (4.7,1.0) -- (5.2,0.6);
-    \draw[->,gray] (2.2,1.35) -- (3.3,1.35) node[midway,above] {$\tau$};
-    \node at (1.5,-0.25) {stejné statistiky};
-    \node at (4.2,-0.25) {po posunu};
-  \end{tikzpicture}
-\end{document}
-```
-
-**WSS stacionarita** je slabší podmínka:
+Pro stacionární proces se statistické vlastnosti nemění posunem času. V praxi se často používá slabá stacionarita, kde stačí
 
 $$
-\mu_X(t)=\mu_X=\text{konst.},\qquad
+\mu_X(t)=\mu_X=\text{konst.},
+\qquad
 R_X(t_1,t_2)=R_X(t_1-t_2).
 $$
 
-Bez explicitních požadavků na hustotu pravděpodobnosti. Zdroj: [[sas_cviceni_v0.96_250225.pdf#page=163|SAS s. 163]].
+Zdroj: [[sas_cviceni_v0.96_250225.pdf#page=163|SAS s. 163]].
 
 ```tikz
 \begin{document}
@@ -307,7 +296,7 @@ Bez explicitních požadavků na hustotu pravděpodobnosti. Zdroj: [[sas_cviceni
 \end{document}
 ```
 
-**Ergodicita vůči střední hodnotě nebo autokorelaci** znamená, že časová střední hodnota $m_X$, respektive časová autokorelace, už nejsou náhodné a rovnají se odpovídajícím pravděpodobnostním charakteristikám. Zdroj: [[sas_cviceni_v0.96_250225.pdf#page=164|SAS s. 164]].
+**Ergodicita** znamená, že statistické charakteristiky lze určit z jedné dostatečně dlouhé realizace časovým průměrováním. Například časový průměr jedné realizace dá stejnou střední hodnotu jako pravděpodobnostní průměr přes celý soubor realizací. Zdroj: [[sas_cviceni_v0.96_250225.pdf#page=164|SAS s. 164]].
 
 ```tikz
 \begin{document}
@@ -321,7 +310,7 @@ Bez explicitních požadavků na hustotu pravděpodobnosti. Zdroj: [[sas_cviceni
 \end{document}
 ```
 
-**Výkonová spektrální hustota stacionárního procesu** je Fourierova transformace autokorelační funkce:
+**Výkonová spektrální hustota** stacionárního procesu je Fourierova transformace autokorelační funkce:
 
 $$
 S_X(\omega)=\mathcal F_{\tau\to\omega}\{R_X(\tau)\},\qquad
@@ -341,7 +330,7 @@ Zdroj: [[sas_cviceni_v0.96_250225.pdf#page=164|SAS s. 164]].
 \end{document}
 ```
 
-**Bílý šum** je definovaný konstantním spektrem; pro spojitý a diskrétní případ PDF uvádí:
+**Bílý šum** je náhodný signál s konstantní výkonovou spektrální hustotou. Má tedy stejný výkon ve všech kmitočtech. Z toho plyne impulsní autokorelace: různé časové okamžiky spolu nekorelují. Pro spojitý a diskrétní případ PDF uvádí:
 
 $$
 S_X(\omega)=\frac{\eta}{2}\Rightarrow R_X(\tau)=\frac{\eta}{2}\delta(\tau),

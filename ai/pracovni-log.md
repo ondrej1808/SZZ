@@ -173,3 +173,8 @@ Přidán `README.md` s rychlým návodem pro ostatní: instalace `pdf-mcp[semant
 - Nahrazeny TODO části v závěrečné sekci k pásmovým signálům, Hilbertově transformaci, komplexní obálce a analogovým modulacím.
 - Doplněny vztahy pro pásmový signál a komplexní obálku, Hilbertův transformátor, analytický signál, AM se zachovanou nosnou a orientační přehled DSB-SC, SSB, FM a PM.
 - Ponechána poznámka, že dodané SAS PDF tyto části zachycuje hlavně jako teoretické otázky, nikoli jako souvislý výklad.
+
+## 2026-06-07 - Doplneni SAS nahodne procesy a modulace
+
+- Zjednodušena odpověď v [[SAS/19 Signaly casova spektralni reprezentace vzorkovani nahodne procesy]] pro základní charakteristiky náhodných signálů a bílý šum.
+- V [[SAS/20 Soustavy LTI konvoluce stabilita pasmove signaly modulace]] doplněny časové a spektrální TikZ náčrty pro AM, PM a FM.
