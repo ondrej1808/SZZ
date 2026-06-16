@@ -273,17 +273,22 @@ $$
 R_X(t_1,t_2)=E\{X(t_1)X^*(t_2)\}.
 $$
 
-Střední hodnota $\mu_X$ popisuje průměrnou úroveň signálu. Autokorelace $R_X$ říká, jak spolu souvisejí hodnoty signálu v různých časech. Zdroj: [[sas_cviceni_v0.96_250225.pdf#page=163|SAS s. 163]].
+Střední hodnota $\mu_X$ popisuje průměrnou úroveň signálu. **Rozptyl** $\sigma_X^2(t)=E\{|X(t)-\mu_X|^2\}=R_X(t,t)-|\mu_X|^2$ udává průměrný výkon kolísání kolem střední hodnoty. Autokorelace $R_X$ říká, jak spolu souvisejí hodnoty signálu ve dvou různých časech — jak rychle si signál „pamatuje" svou minulost. Zdroj: [[sas_cviceni_v0.96_250225.pdf#page=163|SAS s. 163]].
 
-Pro stacionární proces se statistické vlastnosti nemění posunem času. V praxi se často používá slabá stacionarita, kde stačí
+### Stacionarita: striktní (SSS) vs. slabá (WSS)
+
+Stacionární proces je takový, jehož statistické vlastnosti se **nemění posunem v čase** — signál vypadá „statisticky stejně" včera i dnes. Rozlišujeme dvě úrovně:
+
+- **Striktní stacionarita (SSS, strict-sense)** — posunem času se nemění **celé sdružené rozdělení pravděpodobnosti** všech řádů. Pro libovolné $n$ a posun $\tau$ platí, že $\{X(t_1),\dots,X(t_n)\}$ má stejné rozdělení jako $\{X(t_1+\tau),\dots,X(t_n+\tau)\}$. Je to silná, v praxi těžko ověřitelná podmínka.
+- **Slabá stacionarita (WSS, wide-sense)** — stačí, aby se neměnily jen **momenty 1. a 2. řádu**: střední hodnota je konstantní a autokorelace závisí jen na časovém rozdílu $\tau=t_1-t_2$:
 
 $$
 \mu_X(t)=\mu_X=\text{konst.},
 \qquad
-R_X(t_1,t_2)=R_X(t_1-t_2).
+R_X(t_1,t_2)=R_X(\tau),\quad \tau=t_1-t_2.
 $$
 
-Zdroj: [[sas_cviceni_v0.96_250225.pdf#page=163|SAS s. 163]].
+Platí **SSS $\Rightarrow$ WSS** (striktní stacionarita je silnější), opačně obecně ne. Výjimkou je Gaussův proces, který je plně popsán právě momenty 1. a 2. řádu — u něj **WSS $\Leftrightarrow$ SSS**. V praxi se pracuje téměř výhradně s WSS, protože pro výpočet výkonu a spektra stačí. Zdroj: [[sas_cviceni_v0.96_250225.pdf#page=163|SAS s. 163]].
 
 ```tikz
 \begin{document}
@@ -296,7 +301,18 @@ Zdroj: [[sas_cviceni_v0.96_250225.pdf#page=163|SAS s. 163]].
 \end{document}
 ```
 
-**Ergodicita** znamená, že statistické charakteristiky lze určit z jedné dostatečně dlouhé realizace časovým průměrováním. Například časový průměr jedné realizace dá stejnou střední hodnotu jako pravděpodobnostní průměr přes celý soubor realizací. Zdroj: [[sas_cviceni_v0.96_250225.pdf#page=164|SAS s. 164]].
+**Ergodicita** znamená, že statistické charakteristiky lze určit z **jedné dostatečně dlouhé realizace** časovým průměrováním — místo abychom museli měřit celý soubor (ansámbl) realizací. Časový průměr jedné realizace pak dá stejný výsledek jako pravděpodobnostní (ansámblový) průměr přes všechny realizace:
+
+$$
+\langle x(t)\rangle = \lim_{T\to\infty}\frac1T\int_{-T/2}^{T/2}x(t)\,dt \;=\; E\{X(t)\}=\mu_X.
+$$
+
+Ergodicita je **silnější** než stacionarita: každý ergodický proces je stacionární, ale ne naopak. Je to klíčový předpoklad praxe — měříme totiž obvykle jen jeden záznam signálu, ne tisíce paralelních realizací. Zdroj: [[sas_cviceni_v0.96_250225.pdf#page=164|SAS s. 164]].
+
+**Příklady.**
+- *Stacionární a ergodický:* tepelný (Johnsonův) šum rezistoru, šum přijímače, ustálený hluk ventilátoru — jejich statistika se v čase nemění a jeden dlouhý záznam reprezentuje celek.
+- *Stacionární, ale neergodický:* proces $X(t)=A$, kde $A$ je náhodná konstanta (např. náhodně nastavené, ale pevné stejnosměrné napětí pro každou realizaci). Statistika se časem nemění (je stacionární), ale časový průměr jedné realizace dá jen její konkrétní $A$, ne ansámblovou střední hodnotu.
+- *Nestacionární:* řečový signál, EKG, náběh motoru, hudba — střední hodnota i výkon se v čase výrazně mění.
 
 ```tikz
 \begin{document}
@@ -310,12 +326,20 @@ Zdroj: [[sas_cviceni_v0.96_250225.pdf#page=163|SAS s. 163]].
 \end{document}
 ```
 
-**Výkonová spektrální hustota** stacionárního procesu je Fourierova transformace autokorelační funkce:
+**Výkonová spektrální hustota (PSD)** stacionárního procesu je Fourierova transformace autokorelační funkce — tento vztah se nazývá **Wienerova–Chinčinova věta**:
 
 $$
 S_X(\omega)=\mathcal F_{\tau\to\omega}\{R_X(\tau)\},\qquad
 S_X(\Omega)=\mathcal F_{m\to\Omega}\{R_X[m]\}.
 $$
+
+PSD říká, jak je **výkon signálu rozložen do kmitočtů** $[\mathrm{W/Hz}]$. Důležité důsledky:
+
+- **Celkový výkon** je plocha pod PSD a zároveň autokorelace v nule:
+$$
+P_X=R_X(0)=\frac{1}{2\pi}\int_{-\infty}^{\infty} S_X(\omega)\,d\omega=\sigma_X^2+|\mu_X|^2.
+$$
+- Autokorelace a PSD jsou **dvě strany téže mince**: pomalu klesající $R_X(\tau)$ (signál se „dlouho pamatuje") odpovídá úzkému spektru, rychle klesající $R_X(\tau)$ širokému spektru. Krajní případ je bílý šum níže.
 
 Zdroj: [[sas_cviceni_v0.96_250225.pdf#page=164|SAS s. 164]].
 
@@ -364,4 +388,5 @@ Zdroj: [[sas_cviceni_v0.96_250225.pdf#page=165|SAS s. 165]].
 - $R(0)$ dává energii nebo výkon podle typu signálu.
 - FS a DFS mají čárová spektra; FT a DtFT pracují se spojitým kmitočtem.
 - Vzorkování bez ztráty vyžaduje nepřekrytí spektrálních replik.
-- WSS proces má konstantní střední hodnotu a autokorelaci závislou jen na časovém rozdílu.
+- WSS proces má konstantní střední hodnotu a autokorelaci závislou jen na časovém rozdílu; SSS je silnější (neměnné celé rozdělení), ergodicita je ještě silnější (jedna realizace = celý ansámbl).
+- PSD je FT autokorelace (Wienerova–Chinčinova věta); celkový výkon je $R_X(0)=\frac{1}{2\pi}\int S_X(\omega)\,d\omega$.
