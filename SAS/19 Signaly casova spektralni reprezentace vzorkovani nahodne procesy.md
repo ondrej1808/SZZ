@@ -314,6 +314,13 @@ Ergodicita je **silnější** než stacionarita: každý ergodický proces je st
 - *Stacionární, ale neergodický:* proces $X(t)=A$, kde $A$ je náhodná konstanta (např. náhodně nastavené, ale pevné stejnosměrné napětí pro každou realizaci). Statistika se časem nemění (je stacionární), ale časový průměr jedné realizace dá jen její konkrétní $A$, ne ansámblovou střední hodnotu.
 - *Nestacionární:* řečový signál, EKG, náběh motoru, hudba — střední hodnota i výkon se v čase výrazně mění.
 
+**Intuitivní příměr (kasino s ruletami).** Představ si sál plný stejných ruletových stolů, u každého se pořád dokola točí kulička:
+
+- **Ergodický signál** = ke každé ruletě dorazím a sleduji *jeden stůl hodně dlouho*. Protože všechny stoly jsou stejné a „férové", průměr z jednoho dlouhého pozorování (časový průměr) vyjde stejně jako kdybych v jednom okamžiku obešel *všechny stoly najednou* (ansámblový průměr). Stačí mi tedy jeden stůl. Reálná obdoba: tepelný šum rezistoru — jeden dlouhý záznam plně charakterizuje celý proces.
+- **Neergodický signál** = každému stolu jednou hodím kostkou a podle ní nastavím *jiné, ale už napořád pevné* zatížení (offset). Když pak sleduji jeden stůl sebedéle, naměřím jen jeho konkrétní offset — o ostatních stolech se nedozvím nic. Jedna realizace „nevidí" celý soubor, takže časový průměr ≠ ansámblový. To je přesně proces $X(t)=A$ z předchozího příkladu.
+
+Pointa: u ergodického signálu **„čas zastoupí soubor"**, u neergodického ne — proto je ergodicita pro praxi (měříme typicky jen jeden záznam) tak cenná.
+
 ```tikz
 \begin{document}
   \begin{tikzpicture}[x=0.85cm,y=0.75cm]
