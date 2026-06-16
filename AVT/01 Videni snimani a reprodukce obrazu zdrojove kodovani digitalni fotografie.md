@@ -43,6 +43,13 @@ Barvu lze ze samo o sobě černobílého snímače získat dvěma způsoby multi
 
 Jednotlivé buňky CCD/CMOS jsou kryty **mikročočkami**, které soustřeďují světlo na fotocitlivou plochu. Maximum světla na ně dopadá jen ze **směru kolmého k rovině snímače**; jakmile paprsky dopadají šikmo, **účinnost buňky klesá**. U běžného objektivu přitom dopadají paprsky kolmo pouze ve **středu** obrazu a směrem ke krajům se jejich úhel zvětšuje — výsledkem je **postupné ztmavování obrazu k okrajům (vinětace)**. Proto jsou na objektivy digitálních fotoaparátů kladeny — co se kolmosti paprsků (telecentričnosti) týče — výrazně vyšší nároky než na optiku filmových aparátů. Vinětace se navíc softwarově koriguje při předzpracování.
 
+## Optické vady (aberace)
+
+Reálná čočka nezobrazí bod jako dokonalý bod. Dvě časté vady:
+
+- **Sférická aberace** – kulová (sférická) plocha čočky neláme všechny paprsky do jednoho ohniska: paprsky procházející **okrajem** čočky se lámou silněji a protnou osu **blíž** než paraxiální paprsky vedené **středem**. Výsledkem je rozostření / měkká kresba, zvýrazněná u velkého otvoru (světelné objektivy). Potlačuje se **asférickou čočkou**, kombinací čoček nebo **přivřením clony** (využije se jen střed čočky).
+- **Chromatická aberace** – kvůli **disperzi** (index lomu závisí na vlnové délce) má každá barva mírně jiné ohnisko → barevné lemy na kontrastních hranách. Potlačuje se **achromatickými/apochromatickými** dublety. (Tatáž disperze se naopak *využívá* v hranolu k rozkladu barev — viz polohový multiplex výše.)
+
 ## Snímání obrazu – CCD a CMOS
 
 ### CCD
