@@ -39,6 +39,10 @@ Barvu lze ze samo o sobě černobílého snímače získat dvěma způsoby multi
   - **3 snímače + dichroický hranol** (3-CCD/3-CMOS): hranol rozdělí světlo na R, G, B a každou složku zachytí vlastní snímač. Vyšší kvalita a plné rozlišení každé barvy, ale dražší a objemnější (profesionální kamery).
 - **Časový multiplex** – jeden snímač snímá barvy *postupně v čase* přes **rotující barevné kolo** (color wheel) s R/G/B segmenty. Používá se např. u DLP projektorů a některých starších kamer; nevýhodou jsou barevné artefakty u rychlého pohybu.
 
+### Vinětace
+
+Jednotlivé buňky CCD/CMOS jsou kryty **mikročočkami**, které soustřeďují světlo na fotocitlivou plochu. Maximum světla na ně dopadá jen ze **směru kolmého k rovině snímače**; jakmile paprsky dopadají šikmo, **účinnost buňky klesá**. U běžného objektivu přitom dopadají paprsky kolmo pouze ve **středu** obrazu a směrem ke krajům se jejich úhel zvětšuje — výsledkem je **postupné ztmavování obrazu k okrajům (vinětace)**. Proto jsou na objektivy digitálních fotoaparátů kladeny — co se kolmosti paprsků (telecentričnosti) týče — výrazně vyšší nároky než na optiku filmových aparátů. Vinětace se navíc softwarově koriguje při předzpracování.
+
 ## Snímání obrazu – CCD a CMOS
 
 ### CCD
