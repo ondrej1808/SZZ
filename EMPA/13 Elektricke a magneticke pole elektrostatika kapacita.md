@@ -163,6 +163,56 @@ $$
 
 **Zdroj:** [[empa_complete_edition.pdf#page=12|EMPA s. 12]], [[empa_complete_edition.pdf#page=23|EMPA s. 23]].
 
+### Tři základní symetrie — proč je pole takové, jaké je
+
+Síla Gaussovy věty je v tom, že **správně zvolená plocha** udělá z plošného integrálu obyčejné násobení. Klíč je vždy stejný: zvolit plochu tak, aby $\mathbf E$ bylo buď **kolmé a konstantní** (přispívá $E\cdot S$), nebo **rovnoběžné** s plochou (nepřispívá nic). Symetrie zdroje rozhoduje, jak pole vypadá, a tím i jaký tvar plochy zvolit.
+
+**Bodový náboj → kulová plocha, $E\sim 1/r^2$.** Náboj nemá žádný vyznačený směr (je bodově symetrický), takže pole musí být **radiální** a na každé sféře o poloměru $r$ stejně velké. Volíme sféru se středem v náboji; tok je $\Phi=E\cdot 4\pi r^2$ a náboj uvnitř je $Q$:
+$$
+E\cdot 4\pi r^2=\frac{Q}{\varepsilon}\;\Rightarrow\; E=\frac{Q}{4\pi\varepsilon r^2}.
+$$
+Pole klesá jako $1/r^2$, protože plocha sféry roste jako $r^2$ — stejný tok se „rozprostře" na stále větší plochu.
+
+**Nekonečný přímý vodič (náboj $\tau$ na jednotku délky) → válcová plocha, $E\sim 1/r$.** Soustava je symetrická vůči posunu podél osy a vůči otočení kolem ní, takže pole míří **radiálně od osy** a závisí jen na $r$. Volíme souosý válec délky $l$; podstavy nepřispívají ($\mathbf E$ je s nimi rovnoběžné), plášť ano:
+$$
+E\cdot 2\pi r\,l=\frac{\tau l}{\varepsilon}\;\Rightarrow\; E=\frac{\tau}{2\pi\varepsilon r}.
+$$
+Pole klesá jako $1/r$, protože plášť válce roste jen lineárně s $r$.
+
+**Nekonečná rovina / povrch vodiče → krabička (plechovka), $E$ nezávisí na vzdálenosti.** Rovina má translační symetrii ve dvou směrech, takže pole je **kolmé na rovinu** a všude stejně velké. Plocha „plechovky" se ale s odsouváním podstav nemění → pole je **homogenní**, nezávislé na vzdálenosti od roviny. Rozlišujeme dva případy, viz níže.
+
+### Odvození pole u povrchu vodiče: $E=\sigma/\varepsilon_0$
+
+Chceme ukázat, že těsně nad povrchem nabité vodivé elektrody (s plošnou hustotou náboje $\sigma$) je intenzita
+$$
+E=\frac{\sigma}{\varepsilon_0}.
+$$
+
+Zvolíme malý válec — **plechovku** — kolmý na povrch, jedna podstava (plocha $A$) leží ve vakuu těsně nad povrchem, druhá uvnitř vodiče. Celkový tok $\oint \mathbf E\cdot \mathrm d\mathbf S$ rozdělíme na tři části:
+
+- **Horní podstava** (ve vakuu): $\mathbf E$ míří kolmo ven → přispívá $E\cdot A$.
+- **Dolní podstava** (uvnitř vodiče): ve statice je $\mathbf E=0$ → příspěvek nulový.
+- **Plášť**: $\mathbf E$ je s ním rovnoběžné → $\mathbf E\cdot \mathrm d\mathbf S=0$, nepřispívá.
+
+Tok je tedy jen $\Phi=E\cdot A$. Uzavřený náboj je $Q=\sigma A$, takže z Gaussovy věty
+$$
+E\cdot A=\frac{\sigma A}{\varepsilon_0}\;\Rightarrow\; E=\frac{\sigma}{\varepsilon_0}.
+$$
+
+**Proč ne $\sigma/(2\varepsilon_0)$?** Hodnota $\sigma/(2\varepsilon_0)$ platí pro **volně visící nabitou rovinu z izolantu**, kde pole vychází na **obě** strany — obě podstavy plechovky pak přispívají, celkem $2E\cdot A=\sigma A/\varepsilon_0$, odtud $E=\sigma/(2\varepsilon_0)$. U **vodiče** je pole uvnitř vždy nulové, přispívá jen jedna podstava, a výsledek je proto **dvojnásobný**.
+
+### Proč je $\mathbf E$ rovnoběžné se stěnou válce (kolmé na povrch)
+
+Dva nezávislé důvody dávají totéž:
+
+1. **Symetrie nekonečné roviny.** Nekonečná plochá elektroda vypadá stejně z každého místa podél své plochy (translační symetrie ve dvou směrech). Pole proto nesmí mít žádnou složku **podél** roviny — taková složka by musela mířit nějakým vyznačeným směrem, a žádný takový neexistuje. $\mathbf E$ tedy míří výhradně **kolmo** na rovinu, čili kolmo na povrch a rovnoběžně se stěnami válce.
+
+2. **Rovnováha vodiče.** Kdyby měla $\mathbf E$ na povrchu **tečnou** složku, působila by na volné elektrony silou podél povrchu, ty by se daly do pohybu a náboj by se přerozděloval, dokud by se tečná složka nevynulovala. Ve statické rovnováze je tedy tečná složka $\mathbf E$ na povrchu vodiče **přesně nulová** — pole míří jen kolmo.
+
+Z obojího plyne $\mathbf E\perp$ povrch $\Rightarrow$ $\mathbf E\parallel$ stěna válce $\Rightarrow$ skalární součin $\mathbf E\cdot \mathrm d\mathbf S$ na plášti je nulový, a plášť do toku nepřispívá.
+
+> 🔬 **Interaktivní simulace:** Gaussova věta — volba plochy a odvození $E$ pro bodový náboj, přímý vodič i nabitou rovinu — `sim/gaussova_veta_simulace.html` (sekce *EMPA → Simulace* ve wiki). Ukazuje tok přes uzavřenou plochu a jak velikost pole závisí (resp. nezávisí) na vzdálenosti podle symetrie zdroje.
+
 ## Metoda zrcadlení
 
 Metoda zrcadlení nahrazuje vodivou rovinu fiktivními náboji nebo vodiči tak, aby na původní rovině byly splněny stejné okrajové podmínky. U uzemněné vodivé roviny je potenciál roviny nulový a elektrické pole na ni vstupuje kolmo.
