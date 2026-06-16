@@ -66,6 +66,18 @@ Nemá posuv náboje — **každý pixel má vlastní obvod** (zesilovač) vedle/
 
 **Šumy snímačů:** **fotonový šum** (statistická povaha světla, fyzikální limit), **tepelný šum / proud za tmy** (klesá s teplotou, proto chlazené senzory), **fixed-pattern noise** (různá citlivost pixelů daná výrobou).
 
+### Závěrka: rolling vs. global shutter
+
+Určuje, zda se všechny pixely exponují **současně**, nebo **postupně**:
+
+- **Global shutter (globální závěrka)** – celá matice se začne i ukončí expozici ve **stejný okamžik**, pak se náboj uloží a teprve poté vyčítá. Žádné zkreslení pohybu, ale dražší a složitější pixel (víc tranzistorů → nižší citlivost). Typické pro CCD a profesionální/měřicí CMOS.
+- **Rolling shutter (postupná závěrka)** – pixely se exponují a vyčítají **řádek po řádku** s malým časovým posunem. Levnější a běžné u CMOS, ale způsobuje **artefakty u rychlého pohybu**:
+  - **skew / „jello"** – svislé hrany rychle se pohybujícího objektu se naklánějí (např. rotující vrtule, projíždějící auto),
+  - **partial exposure** – krátký záblesk (blesk, LED) osvětlí jen část snímku (světlý/tmavý pruh),
+  - zkreslení při rychlém panování kamerou.
+
+Mechanická závěrka (clona) může u rolling-shutter snímače artefakty omezit, protože ohraničí dobu expozice celého snímku.
+
 ### Fyzikální limit velikosti pixelu
 
 Zmenšování pixelu nelze hnát donekonečna — naráží na **difrakční limit**. Bodový zdroj se i ideální optikou zobrazí jako rozmazaný **Airyho disk** o průměru $D_A = 2{,}44\,\lambda F_{\#}$. Jakmile se rozměr pixelu blíží **vlnové délce světla** (modrá ~450 nm, tj. zhruba $0{,}4\text{–}0{,}5\ \mu\mathrm m$), mluvíme o **sub-difrakčních pixelech**: další zmenšování už nepřináší více detailu, jen víc šumu a problémů s přeslechy (crosstalk) mezi pixely. (Ověřeno – viz Zdroje.)
