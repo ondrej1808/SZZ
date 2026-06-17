@@ -14,6 +14,61 @@ $$
 
 takže pod ~0,6 V je proud zanedbatelný a nad ním roste velmi strmě — proto se v prvním přiblížení počítá s konstantním úbytkem $U_D \approx 0{,}7$ V (Schottky ~0,3 V).
 
+## Kov–polovodič: Schottkyho bariéra
+
+Spojení **kovu a polovodiče** se podle vzájemných energií chová buď jako **usměrňující (Schottkyho) kontakt**, nebo jako **ohmický kontakt** (vodivý oběma směry). Rozhoduje **výstupní práce** kovu $\Phi_M$ (energie potřebná k uvolnění elektronu z kovu na úroveň vakua) vůči výstupní práci polovodiče $\Phi_S$.
+
+### Vznik bariéry (pásový diagram)
+
+Uvažujme **kov + polovodič typu N**, kde $\Phi_M > \Phi_S$ (kov má vyšší výstupní práci). Před spojením leží Fermiho hladina polovodiče $E_{F,S}$ **výš** než Fermiho hladina kovu $E_{F,M}$. Po spojení musí být v rovnováze **Fermiho hladina společná a vodorovná** ($E_F = \mathrm{konst}$), takže:
+
+- elektrony přetečou z polovodiče (vyšší $E_F$) do kovu, dokud se hladiny nesrovnají;
+- u rozhraní v polovodiči vznikne **ochuzená vrstva** (kladně nabité donory bez elektronů) → vestavěné pole;
+- pásy polovodiče se u rozhraní **ohnou nahoru** (band bending) o vestavěné napětí $qV_{bi}$.
+
+Vzniknou dvě klíčové bariéry:
+
+$$
+\Phi_B = \Phi_M - \chi \quad\text{(bariéra z pohledu kovu)}, \qquad
+qV_{bi} = \Phi_M - \Phi_S \quad\text{(bariéra z pohledu polovodiče)},
+$$
+
+kde $\chi$ je **elektronová afinita** polovodiče (vzdálenost dna vodivostního pásu $E_C$ od hladiny vakua). $\Phi_B$ je v ideálním (Schottky–Mottově) modelu nezávislá na napětí; $V_{bi}$ se přiloženým napětím mění.
+
+```tikz
+\begin{document}
+\begin{tikzpicture}[scale=1.1]
+  % vakuova uroven
+  \draw[dashed] (-2.4,3.2) -- (-1,3.2) -- (1.6,3.2);
+  \node[left] at (-2.4,3.2) {$E_{vac}$};
+  % kov vlevo
+  \fill[gray!25] (-2.4,0) rectangle (-1,2.0);
+  \node at (-1.7,1.0) {kov};
+  \draw[thick] (-2.4,2.0) -- (-1,2.0);          % Fermi kovu = E_F
+  \node[left] at (-2.4,2.0) {$E_{F}$};
+  \draw[<->] (-1,2.0) -- (-1,3.2) node[midway,right]{$\Phi_M$};
+  % polovodic N s ohnutim pasu
+  \draw[thick,blue] (-1,3.0) .. controls (-0.2,2.85) and (0.4,2.75) .. (1.6,2.75);
+  \node[blue,right] at (1.6,2.75) {$E_C$};
+  \draw[thick] (-1,2.0) -- (1.6,2.0);            % E_F vodorovne
+  \node[right] at (1.6,2.0) {$E_F$};
+  \draw[thick,red] (-1,0.7) .. controls (-0.2,0.55) and (0.4,0.45) .. (1.6,0.45);
+  \node[red,right] at (1.6,0.45) {$E_V$};
+  % bariery
+  \draw[<->] (-1,2.0) -- (-1,3.0) node[midway,left]{$\Phi_B$};
+  \draw[<->] (0.9,2.0) -- (0.9,2.78) node[midway,right]{$qV_{bi}$};
+  \node at (0.6,1.0) {polovodič N};
+\end{tikzpicture}
+\end{document}
+```
+
+### Chování a vlastnosti
+
+- **Propustný směr** (na kov N-polovodiče přivedeno +): bariéra $V_{bi}$ se sníží, elektrony snadno přecházejí z polovodiče do kovu → proud roste exponenciálně (jako u běžné diody, opět $I=I_0(e^{U/U_T}-1)$, ale s mechanismem **termoemise přes bariéru**).
+- **Závěrný směr:** bariéra $\Phi_B$ z pohledu kovu zůstává — proud je malý, saturační.
+- Vede se **majoritními nosiči** (elektrony) → **není minoritní injekce ani její akumulace** → velmi **rychlé spínání** (žádné zpoždění zotavením náboje jako u PN diody) a nižší prahové napětí (~0,2–0,4 V). Proto se Schottkyho diody používají v **rychlých a spínaných** obvodech a jako **antisaturační** prvek u BJT.
+- Pokud naopak $\Phi_M < \Phi_S$ (pro N-polovodič), bariéra nevznikne nebo je zanedbatelná → **ohmický kontakt** (nutný pro přívodní elektrody všech součástek). Ohmický kontakt se v praxi dělá i **silným dotováním** polovodiče u rozhraní, takže ochuzená vrstva je tak tenká, že jí elektrony snadno **tunelují**.
+
 ## Usměrňovač
 
 **Jednocestný:** jedna dioda propustí kladné půlvlny, záporné ořeže. Střední hodnota výstupu nízká, zvlnění na kmitočtu sítě $f$.
